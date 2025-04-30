@@ -12,6 +12,19 @@
   <link rel="stylesheet" href="{{ asset('Main/css/checkout.css')}}">
   <link rel="stylesheet" href="{{ asset('Main/css/animations.css')}}">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    .fullscreen-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #212229;
+  color: #212229;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+  </style>
 </head>
 <body>
   <div class="app-container">
@@ -19,7 +32,7 @@
     <header class="header">
       <div class="logo">
         <img src="{{asset('Main/img/logo-qbot.png')}}" alt="FastBite Logo" class="">
-        
+        <button id="fullscreen-btn" class="fullscreen-btn">Go Fullscreen</button>
       </div>
       <nav class="nav">
         <button id="cart-btn" class="cart-btn">
@@ -170,5 +183,43 @@
   <script src="{{asset('Main/js/cart.js')}}"></script>
   <script src="{{asset('Main/js/checkout.js')}}"></script>
   <script src="{{asset('Main/js/app.js')}}"></script>
+  <script>
+    document.getElementById('fullscreen-btn').addEventListener('click', function () {
+  if (!document.fullscreenElement &&  // Check if not in fullscreen mode
+    !document.mozFullScreenElement && // For Firefox
+    !document.webkitFullscreenElement && // For Safari
+    !document.msFullscreenElement) { // For Internet Explorer/Edge
+    
+    // Request fullscreen
+    if (document.documentElement.requestFullscreen) {
+      document.documentElement.requestFullscreen();
+    } else if (document.documentElement.mozRequestFullScreen) { // Firefox
+      document.documentElement.mozRequestFullScreen();
+    } else if (document.documentElement.webkitRequestFullscreen) { // Safari
+      document.documentElement.webkitRequestFullscreen();
+    } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
+      document.documentElement.msRequestFullscreen();
+    }
+
+    // Change button text if needed (optional)
+    this.textContent = 'Exit Fullscreen';
+  } else {
+    // Exit fullscreen
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { // Firefox
+      document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { // Safari
+      document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { // IE/Edge
+      document.msExitFullscreen();
+    }
+
+    // Change button text if needed (optional)
+    this.textContent = 'Go Fullscreen';
+  }
+});
+
+  </script>
 </body>
 </html>
