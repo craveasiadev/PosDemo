@@ -220,7 +220,7 @@ const menuData = {
         category: 'sides',
         price: 3.49,
         description: 'Crispy battered onion rings served with dipping sauce.',
-        image: 'https://images.pexels.com/photos/1437232/pexels-photo-1437232.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        image: 'https://images.pexels.com/photos/8880738/pexels-photo-8880738.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
         options: [
           {
             name: 'Size',

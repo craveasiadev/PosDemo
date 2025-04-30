@@ -18,8 +18,8 @@
     <!-- Header -->
     <header class="header">
       <div class="logo">
-        <img src="https://images.pexels.com/photos/1633578/pexels-photo-1633578.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="FastBite Logo" class="logo-img">
-        <h1>FastBite</h1>
+        <img src="{{asset('Main/img/logo-qbot.png')}}" alt="FastBite Logo" class="">
+        
       </div>
       <nav class="nav">
         <button id="cart-btn" class="cart-btn">

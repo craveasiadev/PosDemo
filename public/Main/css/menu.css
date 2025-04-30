@@ -24,6 +24,10 @@
     box-shadow: var(--shadow-sm);
     transition: transform 0.2s, box-shadow 0.2s;
     cursor: pointer;
+  
+    display: flex;
+    flex-direction: column;
+    height: 360px; /* Fixed height as requested */
   }
   
   .menu-item:hover {
@@ -74,6 +78,7 @@
   .menu-item-action {
     display: flex;
     justify-content: center;
+    margin-top: auto; /* push to bottom */
   }
   
   /* Categories */
