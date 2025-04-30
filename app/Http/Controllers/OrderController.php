@@ -9,12 +9,19 @@ class OrderController extends Controller
 {
     public function store(Request $request)
     {
-        $orderNumber = uniqid('A');
+        $orderNumber = strtoupper(substr(uniqid(mt_rand(), true), -4));
 
-        $order = Order::create([
-            'order_number' => $orderNumber,
-            'payment_method' => $request->input('payment_method'),
-        ]);
+// Check if the generated order number already exists in the database
+while (Order::where('order_number', $orderNumber)->exists()) {
+    // If it exists, generate a new one
+    $orderNumber = strtoupper(substr(uniqid(mt_rand(), true), -4));
+}
+
+// Now create the order with the unique order number
+$order = Order::create([
+    'order_number' => $orderNumber,
+    'payment_method' => $request->input('payment_method'),
+]);
 
         foreach ($request->input('items', []) as $item) {
             $order->items()->create([
