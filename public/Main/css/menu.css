@@ -15,6 +15,7 @@
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: var(--space-4);
     padding-right: var(--space-3);
+    grid-auto-rows: 360px; /* All rows will have the same height (360px) */
   }
   
   .menu-item {
@@ -27,7 +28,7 @@
   
     display: flex;
     flex-direction: column;
-    height: 360px; /* Fixed height as requested */
+    height: 100%; /* Allow height to be controlled by the grid, no fixed height needed here */
   }
   
   .menu-item:hover {
