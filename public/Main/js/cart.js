@@ -67,7 +67,7 @@ function renderCartItems() {
       <div class="cart-item-details">
         <h3 class="cart-item-name">${item.name}</h3>
         <div class="cart-item-options">${optionsText}</div>
-        <div class="cart-item-price">$${(item.totalPrice / item.quantity).toFixed(2)} each</div>
+        <div class="cart-item-price">RM${(item.totalPrice / item.quantity).toFixed(2)} each</div>
       </div>
       <div class="cart-item-actions">
         <div class="cart-item-quantity">
@@ -109,19 +109,20 @@ function renderCartItems() {
 }
 
 // Decrease cart item quantity
+// Decrease cart item quantity
 function decreaseCartItemQuantity(id) {
   const itemIndex = cart.findIndex(item => item.id === id);
   
   if (itemIndex !== -1) {
     if (cart[itemIndex].quantity > 1) {
       cart[itemIndex].quantity--;
-      // Recalculate total price
-      const unitPrice = cart[itemIndex].totalPrice / (cart[itemIndex].quantity + 1);
-      cart[itemIndex].totalPrice = unitPrice * cart[itemIndex].quantity;
     } else {
       removeCartItem(id);
       return;
     }
+    
+    // Recalculate total price
+    cart[itemIndex].totalPrice = cart[itemIndex].price * cart[itemIndex].quantity;
     
     updateCartCount();
     saveCartToStorage();
@@ -135,15 +136,16 @@ function increaseCartItemQuantity(id) {
   
   if (itemIndex !== -1) {
     cart[itemIndex].quantity++;
+    
     // Recalculate total price
-    const unitPrice = cart[itemIndex].totalPrice / (cart[itemIndex].quantity - 1);
-    cart[itemIndex].totalPrice = unitPrice * cart[itemIndex].quantity;
+    cart[itemIndex].totalPrice = cart[itemIndex].price * cart[itemIndex].quantity;
     
     updateCartCount();
     saveCartToStorage();
     renderCartItems();
   }
 }
+
 
 // Remove cart item
 function removeCartItem(id) {
@@ -160,9 +162,9 @@ function updateCartSummary() {
   const tax = subtotal * 0.08; // 8% tax
   const total = subtotal + tax;
   
-  document.getElementById('subtotal-amount').textContent = `$${subtotal.toFixed(2)}`;
-  document.getElementById('tax-amount').textContent = `$${tax.toFixed(2)}`;
-  document.getElementById('total-amount').textContent = `$${total.toFixed(2)}`;
+  document.getElementById('subtotal-amount').textContent = `RM${subtotal.toFixed(2)}`;
+  document.getElementById('tax-amount').textContent = `RM${tax.toFixed(2)}`;
+  document.getElementById('total-amount').textContent = `RM${total.toFixed(2)}`;
 }
 
 // Save cart to local storage

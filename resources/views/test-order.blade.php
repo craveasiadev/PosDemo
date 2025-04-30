@@ -49,7 +49,7 @@
         <div class="menu-container">
           <!-- Menu Items will be loaded here -->
           <div class="categories">
-            <h2>Categories</h2>
+            <h2>F&B</h2>
             <ul id="category-list" class="category-list">
               <!-- Categories will be loaded here -->
             </ul>

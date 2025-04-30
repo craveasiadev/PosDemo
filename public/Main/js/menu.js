@@ -85,7 +85,7 @@ function renderMenuItems(categoryId) {
       <div class="menu-item-content">
         <div class="menu-item-header">
           <h3 class="menu-item-name">${item.name}</h3>
-          <span class="menu-item-price">$${item.price.toFixed(2)}</span>
+          <span class="menu-item-price">RM${item.price.toFixed(2)}</span>
         </div>
         <p class="menu-item-description">${item.description}</p>
         <div class="menu-item-action">
@@ -142,7 +142,7 @@ function openItemModal(item) {
         optionItem.innerHTML = `
           <input type="${optionGroup.type}" id="${inputId}" name="${optionGroup.name.toLowerCase().replace(/\s+/g, '-')}" value="${option.name}" ${optionGroup.type === 'radio' && optionGroup.items.indexOf(option) === 0 ? 'checked' : ''}>
           <label for="${inputId}">${option.name}</label>
-          ${option.price > 0 ? `<span class="option-price">+$${option.price.toFixed(2)}</span>` : ''}
+          ${option.price > 0 ? `<span class="option-price">+RM${option.price.toFixed(2)}</span>` : ''}
         `;
         
         // Set initial selected options for radio buttons
@@ -214,7 +214,7 @@ function updateModalPrice() {
   // Multiply by quantity
   totalPrice *= modalQuantity;
   
-  document.getElementById('modal-item-price').textContent = `$${totalPrice.toFixed(2)}`;
+  document.getElementById('modal-item-price').textContent = `RM${totalPrice.toFixed(2)}`;
 }
 
 // Add current item to cart
@@ -230,7 +230,7 @@ function addToCart() {
     image: currentItem.image,
     quantity: modalQuantity,
     options: JSON.parse(JSON.stringify(selectedOptions)), // Deep clone
-    totalPrice: parseFloat(document.getElementById('modal-item-price').textContent.replace('$', ''))
+    totalPrice: parseFloat(document.getElementById('modal-item-price').textContent.replace('RM', ''))
   };
   
   // Add to cart
