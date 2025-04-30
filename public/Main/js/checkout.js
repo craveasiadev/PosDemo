@@ -26,7 +26,7 @@ function renderCheckoutItems() {
         <span class="checkout-item-quantity">${item.quantity}x</span>
         <span>${item.name}</span>
       </div>
-      <div class="checkout-item-price">$${item.totalPrice.toFixed(2)}</div>
+      <div class="checkout-item-price">RM${item.totalPrice.toFixed(2)}</div>
     `;
     
     checkoutItemsContainer.appendChild(checkoutItem);
@@ -34,7 +34,7 @@ function renderCheckoutItems() {
   
   // Update checkout total
   const total = cart.reduce((total, item) => total + item.totalPrice, 0) * 1.08; // Including 8% tax
-  document.getElementById('checkout-total-amount').textContent = `$${total.toFixed(2)}`;
+  document.getElementById('checkout-total-amount').textContent = `RM${total.toFixed(2)}`;
 }
 
 // Confirm order
@@ -81,13 +81,13 @@ function showConfirmation() {
         <span class="confirmation-item-quantity">${item.quantity}x</span>
         <span>${item.name}</span>
       </div>
-      <div class="confirmation-item-price">$${item.totalPrice.toFixed(2)}</div>
+      <div class="confirmation-item-price">RM${item.totalPrice.toFixed(2)}</div>
     `;
     confirmationItemsContainer.appendChild(confirmationItem);
   });
 
   const total = cart.reduce((sum, i) => sum + i.totalPrice, 0) * 1.08;
-  document.getElementById('confirmation-total-amount').textContent = `$${total.toFixed(2)}`;
+  document.getElementById('confirmation-total-amount').textContent = `RM${total.toFixed(2)}`;
 
   cart = [];
   updateCartCount();

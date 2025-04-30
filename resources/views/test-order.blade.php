@@ -73,15 +73,15 @@
         <div class="cart-summary">
           <div class="subtotal">
             <span>Subtotal:</span>
-            <span id="subtotal-amount">$0.00</span>
+            <span id="subtotal-amount">RM0.00</span>
           </div>
           <div class="tax">
             <span>Tax (8%):</span>
-            <span id="tax-amount">$0.00</span>
+            <span id="tax-amount">RM0.00</span>
           </div>
           <div class="total">
             <span>Total:</span>
-            <span id="total-amount">$0.00</span>
+            <span id="total-amount">RM0.00</span>
           </div>
           <button id="checkout-btn" class="primary-btn">Proceed to Checkout</button>
         </div>
@@ -118,7 +118,7 @@
             </div>
             <div class="checkout-total">
               <span>Total:</span>
-              <span id="checkout-total-amount">$0.00</span>
+              <span id="checkout-total-amount">RM0.00</span>
             </div>
           </div>
           <button id="confirm-order-btn" class="primary-btn">Confirm Order</button>
