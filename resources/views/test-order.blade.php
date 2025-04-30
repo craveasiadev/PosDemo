@@ -48,15 +48,16 @@
       <section id="menu-section" class="menu-section active-section">
         <div class="menu-container">
           <!-- Menu Items will be loaded here -->
-          <div id="menu-items" class="menu-items"></div>
-          
-          <!-- Categories Navigation -->
           <div class="categories">
             <h2>Categories</h2>
             <ul id="category-list" class="category-list">
               <!-- Categories will be loaded here -->
             </ul>
           </div>
+          <div id="menu-items" class="menu-items"></div>
+          
+          <!-- Categories Navigation -->
+          
         </div>
       </section>
 
