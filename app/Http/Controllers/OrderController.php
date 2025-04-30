@@ -41,4 +41,12 @@ class OrderController extends Controller
 
         return response()->json(['message' => 'Order status updated']);
     }
+
+    public function destroy(Order $order)
+{
+    $order->delete();
+
+    return response()->json(['message' => 'Order deleted']);
+}
+
 }

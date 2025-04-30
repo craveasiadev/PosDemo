@@ -103,27 +103,30 @@
             <span class="order-number">Order #${order.order_number}</span>
             <span class="order-time">${calculateElapsed(order.created_at)}</span>
           </div>
-          <div class="order-progress">
-            <div class="progress-bar"><div class="progress-fill" style="width: 50%"></div></div>
-          </div>
+          
           <div class="order-details">
             <ul class="item-list">${orderItems}</ul>
             <span class="order-status">${order.status}</span>
           </div>
-          <div class="order-actions">
-            ${order.status === "preparing" ? `<button onclick="updateStatus(${order.id}, 'ready')">Mark Ready</button>` : ""}
-          </div>
+          
         `;
         
         return card;
       }
 
       function calculateElapsed(time) {
-        const now = new Date();
-        const orderTime = new Date(time);
-        const elapsedMinutes = Math.floor((now - orderTime) / 60000); // Get minutes difference
-        return `${elapsedMinutes}m ago`;
-      }
+  const now = new Date();
+  const orderTime = new Date(time);
+  const elapsedMinutes = Math.floor((now - orderTime) / 60000); // Difference in minutes
+
+  if (elapsedMinutes < 60) {
+    return `${elapsedMinutes}m ago`;
+  } else {
+    const hours = Math.floor(elapsedMinutes / 60);
+    return `${hours} hour${hours > 1 ? 's' : ''} ago`;
+  }
+}
+
 
       async function updateStatus(id, newStatus) {
         await fetch(`/orders/${id}/status`, {
@@ -138,7 +141,7 @@
       }
 
       async function startPolling() {
-        setInterval(renderOrders, 5000); // Poll every 5 seconds
+        setInterval(renderOrders, 4000); // Poll every 5 seconds
       }
 
       // Start polling when the page is loaded

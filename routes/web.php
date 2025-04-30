@@ -17,3 +17,4 @@ Route::get('/api/orders', [DisplayController::class, 'fetchOrders']);
 Route::post('/orders', [OrderController::class, 'store']);
 Route::get('/orders/fetch', [OrderController::class, 'index']);
 Route::put('/orders/{order}/status', [OrderController::class, 'updateStatus']);
+Route::delete('/orders/{order}', [OrderController::class, 'destroy']);

@@ -20,7 +20,7 @@
     <header>
       <div class="header-content">
         <h1>Kitchen Display</h1>
-        <div class="header-stats">
+        {{-- <div class="header-stats">
           <div class="stat-item">
             <span class="stat-value">12</span>
             <span class="stat-label">Active Orders</span>
@@ -37,7 +37,7 @@
             <span class="stat-value">3</span>
             <span class="stat-label">Ready</span>
           </div>
-        </div>
+        </div> --}}
       </div>
     </header>
 
@@ -67,6 +67,24 @@
   orderGrid.innerHTML = "";
 
   orders.forEach(order => {
+    const orderTime = new Date(order.created_at);
+  const now = new Date();
+  const hoursElapsed = (now - orderTime) / (1000 * 60 * 60); // in hours
+
+  if (hoursElapsed > 4) {
+    // Send request to delete old order
+    const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+    fetch(`/orders/${order.id}`, {
+      method: 'DELETE',
+      headers: {
+        'X-CSRF-TOKEN': csrfToken,
+        'Content-Type': 'application/json'
+      }
+    });
+
+    return; // Skip rendering
+  }
     const itemsHTML = order.items.map(item => `
       <li class="item">
         <div class="item-header">
@@ -91,7 +109,7 @@
         </div>
         <div class="order-meta">
           <div class="order-time">
-            <span class="time">${order.created_at}</span>
+           <span class="time">${formatDate(order.created_at)}</span>
             <span class="elapsed">${calculateElapsed(order.created_at)}</span>
           </div>
           ${order.priority ? `<div class="priority ${order.priority.toLowerCase()}">${order.priority} Priority</div>` : ""}
@@ -115,13 +133,29 @@
   lastOrders = orders;
 }
 
+function formatDate(dateString) {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('en-GB', {
+    day: '2-digit',
+    month: 'short',
+    year: 'numeric'
+  });
+}
+
         
-        function calculateElapsed(time) {
-          const now = new Date();
-          const orderTime = new Date(time);
-          const elapsedMinutes = Math.floor((now - orderTime) / 60000); // Get minutes difference
-          return `${elapsedMinutes}m ago`;
-        }
+function calculateElapsed(time) {
+  const now = new Date();
+  const orderTime = new Date(time);
+  const elapsedMinutes = Math.floor((now - orderTime) / 60000); // Difference in minutes
+
+  if (elapsedMinutes < 60) {
+    return `${elapsedMinutes}m ago`;
+  } else {
+    const hours = Math.floor(elapsedMinutes / 60);
+    return `${hours} hour${hours > 1 ? 's' : ''} ago`;
+  }
+}
+
         
         async function updateStatus(id, newStatus) {
   await fetch(`/orders/${id}/status`, {
@@ -146,7 +180,7 @@
             } catch (e) {
               console.error("Failed to fetch orders:", e);
             }
-          }, 2000); // Poll every 2 seconds
+          }, 1000); // Poll every 2 seconds
         }
         
         startPolling();
