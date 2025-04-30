@@ -1,0 +1,112 @@
+/* Responsive Design */
+
+/* Base styles - apply to all screen sizes */
+.order-grid {
+    display: grid;
+    gap: var(--space-5);
+  }
+  
+  /* Small screens (phones) */
+  @media screen and (max-width: 639px) {
+    .order-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .header-content {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--space-3);
+    }
+    
+    .header-stats {
+      width: 100%;
+      justify-content: space-between;
+      gap: var(--space-2);
+    }
+    
+    .stat-value {
+      font-size: 1rem;
+    }
+    
+    .stat-label {
+      font-size: 0.75rem;
+    }
+    
+    .order-header {
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+    
+    .order-meta {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      text-align: left;
+    }
+    
+    .priority {
+      margin-top: 0;
+    }
+    
+    .item-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--space-1);
+    }
+    
+    .order-actions {
+      justify-content: center;
+    }
+    
+    button {
+      width: 100%;
+    }
+  }
+  
+  /* Medium screens (tablets) */
+  @media screen and (min-width: 640px) and (max-width: 1023px) {
+    .order-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .header-stats {
+      gap: var(--space-4);
+    }
+  }
+  
+  /* Large screens (desktops) */
+  @media screen and (min-width: 1024px) and (max-width: 1279px) {
+    .order-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  /* Extra large screens */
+  @media screen and (min-width: 1280px) {
+    .order-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  /* Print styles for printing tickets if needed */
+  @media print {
+    body {
+      background-color: white;
+    }
+    
+    header, .order-actions {
+      display: none;
+    }
+    
+    .order-card {
+      page-break-inside: avoid;
+      box-shadow: none;
+      border: 1px solid #000;
+      margin-bottom: var(--space-5);
+    }
+    
+    .order-grid {
+      display: block;
+    }
+  }

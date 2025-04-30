@@ -1,0 +1,183 @@
+/* Animations */
+@keyframes progress {
+    0% {
+      background-position: 0% 0%;
+    }
+    100% {
+      background-position: 100% 0%;
+    }
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInUp {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideOutDown {
+    from {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes slideInRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInLeft {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes checkmark {
+    0% {
+      stroke-dashoffset: 100;
+      opacity: 0;
+    }
+    100% {
+      stroke-dashoffset: 0;
+      opacity: 1;
+    }
+  }
+  
+  @keyframes notification {
+    0% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    10%, 90% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+  }
+  
+  /* Animation Classes */
+  .animate-fadeIn {
+    animation: fadeIn 0.5s ease forwards;
+  }
+  
+  .animate-slideInUp {
+    animation: slideInUp 0.5s ease forwards;
+  }
+  
+  .animate-slideInRight {
+    animation: slideInRight 0.5s ease forwards;
+  }
+  
+  .animate-slideInLeft {
+    animation: slideInLeft 0.5s ease forwards;
+  }
+  
+  .animate-pulse {
+    animation: pulse 2s infinite ease-in-out;
+  }
+  
+  /* Order Card Animations */
+  .order-card {
+    animation: fadeIn 0.5s ease forwards;
+    transition: transform var(--transition-normal), 
+                box-shadow var(--transition-normal),
+                background-color var(--transition-normal);
+  }
+  
+  .order-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  /* Progress Bar Animation */
+  .progress-fill {
+    background-image: linear-gradient(
+      45deg, 
+      rgba(255, 255, 255, 0.15) 25%, 
+      transparent 25%, 
+      transparent 50%, 
+      rgba(255, 255, 255, 0.15) 50%, 
+      rgba(255, 255, 255, 0.15) 75%, 
+      transparent 75%, 
+      transparent
+    );
+    background-size: 1rem 1rem;
+    animation: progress 2s linear infinite;
+    transition: width 1s ease-in-out;
+  }
+  
+  /* Checkmark Animation */
+  .checkmark {
+    position: relative;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+  }
+  
+  .checkmark:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 16px;
+    border-bottom: 2px solid var(--color-secondary);
+    border-right: 2px solid var(--color-secondary);
+    transform: translate(-50%, -60%) rotate(45deg);
+    animation: checkmark 0.5s ease-in-out forwards;
+  }
+  
+  /* Notification Animation */
+  .notification {
+    animation: notification 5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+  }

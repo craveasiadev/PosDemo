@@ -1,0 +1,271 @@
+/* Component Styles */
+
+/* Order Card */
+.order-card {
+    background-color: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid var(--gray-200);
+  }
+  
+  .order-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .order-header {
+    padding: var(--space-4);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid var(--gray-200);
+  }
+  
+  .order-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+  
+  .order-type {
+    display: inline-block;
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  
+  .order-type.dine-in {
+    background-color: rgba(0, 85, 255, 0.1);
+    color: var(--primary);
+  }
+  
+  .order-type.takeout {
+    background-color: rgba(255, 149, 0, 0.1);
+    color: var(--warning);
+  }
+  
+  .order-type.delivery {
+    background-color: rgba(52, 199, 89, 0.1);
+    color: var(--success);
+  }
+  
+  .order-meta {
+    text-align: right;
+  }
+  
+  .order-time {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.875rem;
+  }
+  
+  .time {
+    font-weight: 600;
+  }
+  
+  .elapsed {
+    color: var(--gray-500);
+    font-size: 0.75rem;
+  }
+  
+  .priority {
+    margin-top: var(--space-2);
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+  
+  .priority.high {
+    background-color: rgba(255, 59, 48, 0.1);
+    color: var(--danger);
+  }
+  
+  .priority.medium {
+    background-color: rgba(255, 149, 0, 0.1);
+    color: var(--warning);
+  }
+  
+  .priority.low {
+    background-color: rgba(52, 199, 89, 0.1);
+    color: var(--success);
+  }
+  
+  /* Progress Bar */
+  .order-progress {
+    padding: var(--space-3) var(--space-4);
+    background-color: var(--gray-50);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+  
+  .progress-bar {
+    height: 8px;
+    background-color: var(--gray-200);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .progress-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+  }
+  
+  .new-order .progress-fill {
+    background-color: var(--primary);
+    width: 0%;
+  }
+  
+  .preparing .progress-fill {
+    background-color: var(--warning);
+  }
+  
+  .ready .progress-fill {
+    background-color: var(--success);
+    width: 100%;
+  }
+  
+  .progress-fill.attention {
+    background-color: var(--danger);
+  }
+  
+  .status-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+  
+  .new-order .status-label {
+    color: var(--primary);
+  }
+  
+  .preparing .status-label {
+    color: var(--warning);
+  }
+  
+  .ready .status-label {
+    color: var(--success);
+  }
+  
+  .status-label.attention {
+    color: var(--danger);
+  }
+  
+  /* Order Details */
+  .order-details {
+    padding: var(--space-4);
+  }
+  
+  .item-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+  
+  .item {
+    padding-bottom: var(--space-3);
+    border-bottom: 1px dashed var(--gray-200);
+  }
+  
+  .item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  
+  .item-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--space-2);
+  }
+  
+  .item-name {
+    font-weight: 600;
+  }
+  
+  .item-quantity {
+    font-weight: 500;
+    color: var(--gray-600);
+  }
+  
+  .modifiers {
+    margin-left: var(--space-4);
+    margin-bottom: var(--space-2);
+  }
+  
+  .modifiers li {
+    font-size: 0.875rem;
+    color: var(--gray-600);
+    position: relative;
+    padding-left: var(--space-3);
+  }
+  
+  .modifiers li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--gray-400);
+  }
+  
+  .special-instructions {
+    margin-top: var(--space-2);
+    padding: var(--space-3);
+    background-color: rgba(255, 59, 48, 0.05);
+    border-left: 3px solid var(--danger);
+    border-radius: var(--radius-sm);
+  }
+  
+  .special-instructions p {
+    font-size: 0.875rem;
+    color: var(--danger-dark);
+    margin: 0;
+  }
+  
+  /* Buttons and Actions */
+  .order-actions {
+    padding: var(--space-4);
+    display: flex;
+    justify-content: flex-end;
+    border-top: 1px solid var(--gray-200);
+  }
+  
+  button {
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-md);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    outline: none;
+  }
+  
+  .start-button {
+    background-color: var(--primary);
+    color: white;
+  }
+  
+  .start-button:hover {
+    background-color: var(--primary-dark);
+  }
+  
+  .complete-button {
+    background-color: var(--warning);
+    color: white;
+  }
+  
+  .complete-button:hover {
+    background-color: var(--warning-dark);
+  }
+  
+  .served-button {
+    background-color: var(--success);
+    color: white;
+  }
+  
+  .served-button:hover {
+    background-color: var(--success-dark);
+  }
