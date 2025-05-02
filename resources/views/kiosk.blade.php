@@ -65,8 +65,9 @@
         </div>
         <div class="start-order-container">
           <button id="start-order-btn" class="primary-btn">Start Order</button>
-          <button id="fullscreen-btn" class="fullscreen-btn">Go Fullscreen</button>
+          
         </div>
+        <button id="fullscreen-btn" class="fullscreen-btn">Go Fullscreen</button>
       </div>
 
       <!-- Menu Page -->
