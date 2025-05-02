@@ -8,32 +8,34 @@ use Illuminate\Http\Request;
 class OrderController extends Controller
 {
     public function store(Request $request)
-    {
-        $orderNumber = strtoupper(substr(uniqid(mt_rand(), true), -4));
-
-// Check if the generated order number already exists in the database
-while (Order::where('order_number', $orderNumber)->exists()) {
-    // If it exists, generate a new one
+{
     $orderNumber = strtoupper(substr(uniqid(mt_rand(), true), -4));
+
+    // Check if the generated order number already exists in the database
+    while (Order::where('order_number', $orderNumber)->exists()) {
+        // If it exists, generate a new one
+        $orderNumber = strtoupper(substr(uniqid(mt_rand(), true), -4));
+    }
+
+    // Create the order with the unique order number
+    $order = Order::create([
+        'order_number' => $orderNumber,
+        'payment_method' => $request->input('payment_method'),
+    ]);
+
+    // Loop through the order items and create them
+    foreach ($request->input('items', []) as $item) {
+        $order->items()->create([
+            'name' => $item['name'],
+            'quantity' => $item['quantity'],
+            'price' => $item['totalPrice'],
+            'options' => $item['options'] ?? [],
+        ]);
+    }
+
+    return response()->json(['message' => 'Order placed', 'order_number' => $orderNumber]);
 }
 
-// Now create the order with the unique order number
-$order = Order::create([
-    'order_number' => $orderNumber,
-    'payment_method' => $request->input('payment_method'),
-]);
-
-        foreach ($request->input('items', []) as $item) {
-            $order->items()->create([
-                'name' => $item['name'],
-                'quantity' => $item['quantity'],
-                'price' => $item['totalPrice'],
-                'options' => $item['options'] ?? [],
-            ]);
-        }
-
-        return response()->json(['message' => 'Order placed', 'order_number' => $orderNumber]);
-    }
 
     public function index()
     {
