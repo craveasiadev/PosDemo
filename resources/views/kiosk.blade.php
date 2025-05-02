@@ -126,21 +126,21 @@
         <div class="ad-carousel">
           <div class="carousel-container">
             <div class="carousel-slide">
-              <img src="https://images.pexels.com/photos/2983101/pexels-photo-2983101.jpeg" alt="Delicious Burger Special" />
+              <img src="{{ asset('images/car1.jpeg')}}" alt="Delicious Burger Special" />
               <div class="carousel-caption">
                 <h2>Try Our New Signature Burger</h2>
                 <p>Limited time offer</p>
               </div>
             </div>
             <div class="carousel-slide">
-              <img src="https://images.pexels.com/photos/1583884/pexels-photo-1583884.jpeg" alt="Breakfast Menu" />
+              <img src="{{ asset('images/car2.jpeg')}}" alt="Breakfast Menu" />
               <div class="carousel-caption">
                 <h2>Breakfast Menu</h2>
                 <p>Available until 10:30 AM</p>
               </div>
             </div>
             <div class="carousel-slide">
-              <img src="https://images.pexels.com/photos/7261968/pexels-photo-7261968.jpeg" alt="Happy Meal" />
+              <img src="{{ asset('images/car3.jpeg')}}" alt="Happy Meal" />
               <div class="carousel-caption">
                 <h2>Happy Meal with New Toys</h2>
                 <p>Make your kids happy</p>

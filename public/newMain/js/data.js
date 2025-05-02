@@ -199,14 +199,14 @@ const categories = {
         name: 'Normal Cut',
         price: 3.99,
         description: 'Normal usual cut',
-        image: 'https://cdn-icons-png.flaticon.com/512/2825/2825120.png'
+        image: '/images/haircut.jpg'
       },
       {
         id: 'Relaxing',
         name: 'Relaxing',
         price: 2.99,
         description: 'Relaxing cut',
-        image: 'https://cdn-icons-png.flaticon.com/512/2966/2966265.png'
+        image: '/images/relaxing.jpg'
       }
     ],
     'delivery': [
