@@ -23,6 +23,7 @@
     cursor: pointer;
     transition: transform var(--transition-fast), box-shadow var(--transition-fast);
     position: relative;
+    height: 300px;
   }
   
   .upsell-item:hover {

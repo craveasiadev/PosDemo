@@ -193,20 +193,20 @@ const categories = {
         image: 'https://images.pexels.com/photos/3616956/pexels-photo-3616956.jpeg'
       }
     ],
-    'mccafe': [
+    'haircut': [
       {
-        id: 'cappuccino',
-        name: 'Cappuccino',
+        id: 'Normal Cut',
+        name: 'Normal Cut',
         price: 3.99,
-        description: 'Espresso with steamed milk and a layer of foam.',
-        image: 'https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg'
+        description: 'Normal usual cut',
+        image: 'https://cdn-icons-png.flaticon.com/512/2825/2825120.png'
       },
       {
-        id: 'iced-coffee',
-        name: 'Iced Coffee',
+        id: 'Relaxing',
+        name: 'Relaxing',
         price: 2.99,
-        description: 'Cold coffee served over ice with optional flavor.',
-        image: 'https://images.pexels.com/photos/2074130/pexels-photo-2074130.jpeg'
+        description: 'Relaxing cut',
+        image: 'https://cdn-icons-png.flaticon.com/512/2966/2966265.png'
       }
     ],
     'delivery': [

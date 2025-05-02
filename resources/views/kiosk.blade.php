@@ -25,6 +25,96 @@
     
     
       </style>
+      <style>
+       .quantity-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.quantity-modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 16px;
+  padding: 30px 20px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  animation: fadeInUp 0.3s ease-out;
+}
+
+.modal-content img {
+  width: 120px;
+  height: auto;
+  margin-bottom: 15px;
+  border-radius: 12px;
+}
+
+.quantity-selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin: 20px 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.quantity-btn {
+  background-color: #f2f2f2;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.quantity-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.primary-btn, .secondary-btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.primary-btn {
+  background-color: #ffcc00;
+  color: black;
+}
+
+.secondary-btn {
+  background-color: #ddd;
+  color: #333;
+}
+
+@keyframes fadeInUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+      </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
@@ -115,7 +205,7 @@
               
               <!-- Services Subcategories -->
               <ul class="sub-categories" data-parent="services">
-                <li data-subcategory="mccafe">McCafé</li>
+                <li data-subcategory="haircut">Haircut</li>
                 <li data-subcategory="delivery">Delivery</li>
                 <li data-subcategory="party">Birthday Party</li>
                 <li data-subcategory="wifi">Free WiFi</li>
@@ -129,6 +219,25 @@
                 <li data-subcategory="limited-time">Limited Time</li>
               </ul>
             </div>
+
+            <!-- Quantity Modal -->
+<div id="quantity-modal" class="quantity-modal hidden">
+    <div class="modal-content">
+      <h3 id="modal-item-name"></h3>
+      <img id="modal-item-image" src="" alt="" />
+      <p id="modal-item-description"></p>
+      <div class="quantity-selector">
+        <button id="decrease-qty" class="quantity-btn">-</button>
+        <span id="selected-qty">1</span>
+        <button id="increase-qty" class="quantity-btn">+</button>
+      </div>
+      <div class="modal-actions">
+        <button id="confirm-add" class="primary-btn">Add to Cart</button>
+        <button id="cancel-add" class="secondary-btn">Cancel</button>
+      </div>
+    </div>
+  </div>
+  
           </nav>
           
           <div class="menu-items-container">

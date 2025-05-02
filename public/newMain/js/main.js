@@ -175,6 +175,9 @@ function loadMenuItems(subcategoryId) {
     `;
     return;
   }
+
+  let selectedItem = null;
+let selectedQuantity = 1;
   
   items.forEach(item => {
     const itemElement = document.createElement('div');
@@ -193,27 +196,65 @@ function loadMenuItems(subcategoryId) {
     `;
     
     menuItemsContainer.appendChild(itemElement);
-    
+   
+
     // Add to cart event listener
     const addButton = itemElement.querySelector('.add-to-cart-btn');
-    addButton.addEventListener('click', () => addToCart(item));
+    // addButton.addEventListener('click', () => addToCart(item));
+    addButton.addEventListener('click', () => openQuantityModal(item));
+      
   });
 }
 
-function addToCart(item) {
+function openQuantityModal(item) {
+    selectedItem = item;
+    selectedQuantity = 1;
+    document.getElementById('modal-item-name').textContent = item.name;
+    document.getElementById('modal-item-image').src = item.image;
+    document.getElementById('modal-item-description').textContent = item.description;
+    document.getElementById('selected-qty').textContent = selectedQuantity;
+    document.getElementById('quantity-modal').classList.remove('hidden');
+  }
+  
+  // Handle modal buttons
+  document.getElementById('increase-qty').addEventListener('click', () => {
+    selectedQuantity++;
+    document.getElementById('selected-qty').textContent = selectedQuantity;
+  });
+  
+  document.getElementById('decrease-qty').addEventListener('click', () => {
+    if (selectedQuantity > 1) {
+      selectedQuantity--;
+      document.getElementById('selected-qty').textContent = selectedQuantity;
+    }
+  });
+  
+  document.getElementById('confirm-add').addEventListener('click', () => {
+    for (let i = 0; i < selectedQuantity; i++) {
+      addToCart(selectedItem);
+    }
+    document.getElementById('quantity-modal').classList.add('hidden');
+  });
+  
+  document.getElementById('cancel-add').addEventListener('click', () => {
+    document.getElementById('quantity-modal').classList.add('hidden');
+  });
+  
+  
+
+  function addToCart(item, quantity = 1) {
   // Check if item is already in cart
   const existingItemIndex = cart.findIndex(cartItem => cartItem.id === item.id);
   
   if (existingItemIndex >= 0) {
-    // Increase quantity
-    cart[existingItemIndex].quantity += 1;
+    cart[existingItemIndex].quantity += quantity;
   } else {
-    // Add new item
     cart.push({
       ...item,
-      quantity: 1
+      quantity: quantity
     });
   }
+
   
   // Update cart count
   updateCartCount();
