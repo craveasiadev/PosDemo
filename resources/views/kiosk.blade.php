@@ -189,7 +189,6 @@
               <!-- Food & Beverages Subcategories -->
               <ul class="sub-categories" data-parent="food-beverages" style="display: block;">
                 <li data-subcategory="burgers" class="active">Burgers</li>
-                <li data-subcategory="chicken">Chicken</li>
                 <li data-subcategory="sides">Sides</li>
                 <li data-subcategory="beverages">Beverages</li>
               </ul>

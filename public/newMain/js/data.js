@@ -4,7 +4,6 @@ const categories = {
       name: 'Food & Beverages',
       subcategories: {
         'burgers': { name: 'Burgers' },
-        'chicken': { name: 'Chicken' },
         'sides': { name: 'Sides & Snacks' },
         'beverages': { name: 'Beverages' },
       }
@@ -49,16 +48,6 @@ const categories = {
         price: 3.99,
         description: 'Classic beef patty with cheese, onions, pickles, ketchup, and mustard.',
         image: '/images/cheeseburger.jpeg'
-      },
-      
-    ],
-    'chicken': [
-      {
-        id: 'crispy-chicken',
-        name: 'Crispy Chicken Sandwich',
-        price: 5.49,
-        description: 'Crispy chicken fillet with mayo and lettuce on a potato roll.',
-        image: '/images/crispychicken.jpeg'
       },
       
     ],
