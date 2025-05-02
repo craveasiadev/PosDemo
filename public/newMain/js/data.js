@@ -14,14 +14,12 @@ const categories = {
       subcategories: {
         'mccafe': { name: 'McCafé' },
         'delivery': { name: 'Delivery' },
-        'party': { name: 'Birthday Party' },
         'wifi': { name: 'Free WiFi' }
       }
     },
     'items': {
       name: 'Items',
       subcategories: {
-        'value-meals': { name: 'Value Meals' },
         'family-bundles': { name: 'Family Bundles' },
         'limited-time': { name: 'Limited Time' }
       }
@@ -86,30 +84,14 @@ const categories = {
         name: 'Coca-Cola',
         price: 1.99,
         description: 'Refreshing Coca-Cola served with ice.',
-        image: 'https://images.pexels.com/photos/2983100/pexels-photo-2983100.jpeg'
+        image: '/images/cola.jpeg'
       },
       {
         id: 'shake',
         name: 'Milkshake',
         price: 3.29,
         description: 'Creamy milkshake in chocolate, vanilla, or strawberry.',
-        image: '/images/cola.jpeg'
-      }
-    ],
-    'value-meals': [
-      {
-        id: 'big-mac-meal',
-        name: 'Big Mac Meal',
-        price: 8.99,
-        description: 'Big Mac, medium fries, and medium drink.',
         image: '/images/shake.jpeg'
-      },
-      {
-        id: 'quarter-pounder-meal',
-        name: 'Quarter Pounder Meal',
-        price: 9.49,
-        description: 'Quarter Pounder, medium fries, and medium drink.',
-        image: 'https://images.pexels.com/photos/2702674/pexels-photo-2702674.jpeg'
       }
     ],
     'family-bundles': [
@@ -155,15 +137,6 @@ const categories = {
         image: 'https://images.pexels.com/photos/7363099/pexels-photo-7363099.jpeg'
       }
     ],
-    'party': [
-      {
-        id: 'party-booking',
-        name: 'Birthday Party Booking',
-        price: 0,
-        description: 'Information about booking a birthday party.',
-        image: 'https://images.pexels.com/photos/1343504/pexels-photo-1343504.jpeg'
-      }
-    ],
     'wifi': [
       {
         id: 'wifi-info',
@@ -181,19 +154,19 @@ const categories = {
       id: 'upsell-fries',
       name: 'Upgrade to Large Fries',
       price: 1.50,
-      image: 'https://images.pexels.com/photos/115740/pexels-photo-115740.jpeg'
+      image: '/images/frenchfries.jpeg'
     },
     {
       id: 'upsell-drink',
       name: 'Upgrade to Large Drink',
       price: 1.00,
-      image: 'https://images.pexels.com/photos/2983100/pexels-photo-2983100.jpeg'
+      image: '/images/cola.jpeg'
     },
     {
       id: 'upsell-apple-pie',
       name: 'Add Apple Pie',
       price: 1.99,
-      image: 'https://images.pexels.com/photos/6163263/pexels-photo-6163263.jpeg'
+      image: '/images/apple.jpeg'
     },
     {
       id: 'upsell-ice-cream',

@@ -198,13 +198,11 @@
               <ul class="sub-categories" data-parent="services">
                 <li data-subcategory="haircut">Haircut</li>
                 <li data-subcategory="delivery">Delivery</li>
-                <li data-subcategory="party">Birthday Party</li>
                 <li data-subcategory="wifi">Free WiFi</li>
               </ul>
               
               <!-- Items Subcategories -->
               <ul class="sub-categories" data-parent="items">
-                <li data-subcategory="value-meals">Value Meals</li>
                 <li data-subcategory="family-bundles">Family Bundles</li>
                 <li data-subcategory="limited-time">Limited Time</li>
               </ul>
