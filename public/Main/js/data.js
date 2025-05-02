@@ -21,11 +21,6 @@ const menuData = {
         name: 'Drinks',
         image: 'https://images.pexels.com/photos/2531184/pexels-photo-2531184.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
       },
-      {
-        id: 'desserts',
-        name: 'Desserts',
-        image: 'https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-      }
     ],
     items: [
       // Burgers

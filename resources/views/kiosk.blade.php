@@ -139,18 +139,11 @@
                 <p>Available until 10:30 AM</p>
               </div>
             </div>
-            <div class="carousel-slide">
-              <img src="{{ asset('images/car3.jpeg')}}" alt="Happy Meal" />
-              <div class="carousel-caption">
-                <h2>Happy Meal with New Toys</h2>
-                <p>Make your kids happy</p>
-              </div>
-            </div>
+            
           </div>
           <div class="carousel-dots">
             <span class="dot active" data-slide="0"></span>
             <span class="dot" data-slide="1"></span>
-            <span class="dot" data-slide="2"></span>
           </div>
         </div>
         <div class="start-order-container">
@@ -198,9 +191,7 @@
                 <li data-subcategory="burgers" class="active">Burgers</li>
                 <li data-subcategory="chicken">Chicken</li>
                 <li data-subcategory="sides">Sides</li>
-                <li data-subcategory="desserts">Desserts</li>
                 <li data-subcategory="beverages">Beverages</li>
-                <li data-subcategory="breakfast">Breakfast</li>
               </ul>
               
               <!-- Services Subcategories -->
@@ -213,7 +204,6 @@
               
               <!-- Items Subcategories -->
               <ul class="sub-categories" data-parent="items">
-                <li data-subcategory="happy-meal">Happy Meal</li>
                 <li data-subcategory="value-meals">Value Meals</li>
                 <li data-subcategory="family-bundles">Family Bundles</li>
                 <li data-subcategory="limited-time">Limited Time</li>

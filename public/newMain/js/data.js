@@ -6,9 +6,7 @@ const categories = {
         'burgers': { name: 'Burgers' },
         'chicken': { name: 'Chicken' },
         'sides': { name: 'Sides & Snacks' },
-        'desserts': { name: 'Desserts' },
         'beverages': { name: 'Beverages' },
-        'breakfast': { name: 'Breakfast' }
       }
     },
     'services': {
@@ -23,7 +21,6 @@ const categories = {
     'items': {
       name: 'Items',
       subcategories: {
-        'happy-meal': { name: 'Happy Meal' },
         'value-meals': { name: 'Value Meals' },
         'family-bundles': { name: 'Family Bundles' },
         'limited-time': { name: 'Limited Time' }
@@ -39,29 +36,23 @@ const categories = {
         name: 'Big Mac',
         price: 5.99,
         description: 'Iconic burger with special sauce, lettuce, cheese, pickles, onions on a sesame seed bun.',
-        image: 'https://images.pexels.com/photos/3219547/pexels-photo-3219547.jpeg'
+        image: '/images/bigmac.jpeg'
       },
       {
         id: 'quarter-pounder',
         name: 'Quarter Pounder',
         price: 6.49,
         description: 'Fresh beef patty, onions, pickles, ketchup, and mustard on a sesame seed bun.',
-        image: 'https://images.pexels.com/photos/2702674/pexels-photo-2702674.jpeg'
+        image: '/images/quaeter.jpeg'
       },
       {
         id: 'cheeseburger',
         name: 'Cheeseburger',
         price: 3.99,
         description: 'Classic beef patty with cheese, onions, pickles, ketchup, and mustard.',
-        image: 'https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg'
+        image: '/images/cheeseburger.jpeg'
       },
-      {
-        id: 'double-cheeseburger',
-        name: 'Double Cheeseburger',
-        price: 4.99,
-        description: 'Two beef patties with cheese, onions, pickles, ketchup, and mustard.',
-        image: 'https://images.pexels.com/photos/2271107/pexels-photo-2271107.jpeg'
-      }
+      
     ],
     'chicken': [
       {
@@ -69,15 +60,9 @@ const categories = {
         name: 'Crispy Chicken Sandwich',
         price: 5.49,
         description: 'Crispy chicken fillet with mayo and lettuce on a potato roll.',
-        image: 'https://images.pexels.com/photos/10790638/pexels-photo-10790638.jpeg'
+        image: '/images/crispychicken.jpeg'
       },
-      {
-        id: 'mcnuggets-10pc',
-        name: 'McNuggets (10pc)',
-        price: 4.99,
-        description: '10 pieces of crispy chicken nuggets with your choice of sauce.',
-        image: 'https://images.pexels.com/photos/11566135/pexels-photo-11566135.jpeg'
-      }
+      
     ],
     'sides': [
       {
@@ -85,30 +70,14 @@ const categories = {
         name: 'French Fries',
         price: 2.49,
         description: 'Golden, crispy fries with just the right amount of salt.',
-        image: 'https://images.pexels.com/photos/115740/pexels-photo-115740.jpeg'
+        image: '/images/frenchfries.jpeg'
       },
       {
         id: 'apple-slices',
         name: 'Apple Slices',
         price: 1.99,
         description: 'Fresh, crisp apple slices - a healthier option.',
-        image: 'https://images.pexels.com/photos/1510392/pexels-photo-1510392.jpeg'
-      }
-    ],
-    'desserts': [
-      {
-        id: 'mcflurry',
-        name: 'McFlurry',
-        price: 3.49,
-        description: 'Vanilla soft serve with your choice of mix-ins.',
-        image: 'https://images.pexels.com/photos/2846337/pexels-photo-2846337.jpeg'
-      },
-      {
-        id: 'apple-pie',
-        name: 'Apple Pie',
-        price: 1.99,
-        description: 'Crispy pastry filled with warm apple filling.',
-        image: 'https://images.pexels.com/photos/6163263/pexels-photo-6163263.jpeg'
+        image: '/images/apple.jpeg'
       }
     ],
     'beverages': [
@@ -124,39 +93,7 @@ const categories = {
         name: 'Milkshake',
         price: 3.29,
         description: 'Creamy milkshake in chocolate, vanilla, or strawberry.',
-        image: 'https://images.pexels.com/photos/103566/pexels-photo-103566.jpeg'
-      }
-    ],
-    'breakfast': [
-      {
-        id: 'egg-mcmuffin',
-        name: 'Egg McMuffin',
-        price: 4.49,
-        description: 'Canadian bacon, egg, and American cheese on an English muffin.',
-        image: 'https://images.pexels.com/photos/139746/pexels-photo-139746.jpeg'
-      },
-      {
-        id: 'hotcakes',
-        name: 'Hotcakes',
-        price: 4.99,
-        description: 'Fluffy hotcakes with syrup and butter.',
-        image: 'https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg'
-      }
-    ],
-    'happy-meal': [
-      {
-        id: 'cheeseburger-meal',
-        name: 'Cheeseburger Meal',
-        price: 5.99,
-        description: 'Cheeseburger, small fries, apple slices, milk, and a toy.',
-        image: 'https://images.pexels.com/photos/7261968/pexels-photo-7261968.jpeg'
-      },
-      {
-        id: 'nuggets-meal',
-        name: 'Nuggets Meal',
-        price: 5.99,
-        description: '4pc McNuggets, small fries, apple slices, milk, and a toy.',
-        image: 'https://images.pexels.com/photos/5908232/pexels-photo-5908232.jpeg'
+        image: '/images/cola.jpeg'
       }
     ],
     'value-meals': [
@@ -165,7 +102,7 @@ const categories = {
         name: 'Big Mac Meal',
         price: 8.99,
         description: 'Big Mac, medium fries, and medium drink.',
-        image: 'https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg'
+        image: '/images/shake.jpeg'
       },
       {
         id: 'quarter-pounder-meal',
