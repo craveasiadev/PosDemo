@@ -12,6 +12,19 @@
     <link rel="stylesheet" href="{{ asset('newMain/css/upsell.css')}}" />
     <link rel="stylesheet" href="{{ asset('newMain/css/payment.css')}}" />
     <link rel="stylesheet" href="{{ asset('newMain/css/confirmation.css')}}" />
+    <style>
+        .fullscreen-btn {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #ffffff;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    
+      </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
@@ -52,6 +65,7 @@
         </div>
         <div class="start-order-container">
           <button id="start-order-btn" class="primary-btn">Start Order</button>
+          <button id="fullscreen-btn" class="fullscreen-btn">Go Fullscreen</button>
         </div>
       </div>
 
@@ -333,5 +347,43 @@
 
     <script src="{{ asset('newMain/js/data.js')}}"></script>
     <script src="{{ asset('newMain/js/main.js')}}"></script>
+    <script>
+        document.getElementById('fullscreen-btn').addEventListener('click', function () {
+      if (!document.fullscreenElement &&  // Check if not in fullscreen mode
+        !document.mozFullScreenElement && // For Firefox
+        !document.webkitFullscreenElement && // For Safari
+        !document.msFullscreenElement) { // For Internet Explorer/Edge
+        
+        // Request fullscreen
+        if (document.documentElement.requestFullscreen) {
+          document.documentElement.requestFullscreen();
+        } else if (document.documentElement.mozRequestFullScreen) { // Firefox
+          document.documentElement.mozRequestFullScreen();
+        } else if (document.documentElement.webkitRequestFullscreen) { // Safari
+          document.documentElement.webkitRequestFullscreen();
+        } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
+          document.documentElement.msRequestFullscreen();
+        }
+    
+        // Change button text if needed (optional)
+        this.textContent = 'Exit Fullscreen';
+      } else {
+        // Exit fullscreen
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.mozCancelFullScreen) { // Firefox
+          document.mozCancelFullScreen();
+        } else if (document.webkitExitFullscreen) { // Safari
+          document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) { // IE/Edge
+          document.msExitFullscreen();
+        }
+    
+        // Change button text if needed (optional)
+        this.textContent = 'Go Fullscreen';
+      }
+    });
+    
+      </script>
   </body>
 </html>
