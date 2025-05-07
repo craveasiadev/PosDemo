@@ -16,8 +16,8 @@
     .fullscreen-btn {
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #212229;
-  color: #212229;
+  background-color: #F8F9FA;
+  color: #F8F9FA;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -130,6 +130,21 @@
         <div class="confirmation-container">
           <div class="confirmation-header">
             <h2>Order Confirmed!</h2>
+            <h4>Scan for E-Receipt</h4>
+            <div class="receipt-qr-code">
+              <svg width="200" height="200" viewBox="0 0 200 200">
+                <rect width="200" height="200" fill="#ffffff"/>
+                <path d="M40,40 L40,80 L80,80 L80,40 Z" fill="#000000"/>
+                <path d="M50,50 L50,70 L70,70 L70,50 Z" fill="#ffffff"/>
+                <path d="M120,40 L120,80 L160,80 L160,40 Z" fill="#000000"/>
+                <path d="M130,50 L130,70 L150,70 L150,50 Z" fill="#ffffff"/>
+                <path d="M40,120 L40,160 L80,160 L80,120 Z" fill="#000000"/>
+                <path d="M50,130 L50,150 L70,150 L70,130 Z" fill="#ffffff"/>
+                <path d="M90,40 L90,50 L100,50 L100,60 L110,60 L110,70 L90,70 L90,90 L100,90 L100,100 L90,100 L90,110 L100,110 L100,120 L110,120 L110,110 L120,110 L120,100 L110,100 L110,90 L120,90 L120,100 L130,100 L130,110 L140,110 L140,120 L150,120 L150,110 L160,110 L160,90 L150,90 L150,100 L140,100 L140,90 L130,90 L130,80 L110,80 L110,40 Z" fill="#000000"/>
+                <path d="M120,120 L120,130 L110,130 L110,150 L100,150 L100,160 L120,160 L120,150 L130,150 L130,160 L150,160 L150,150 L160,150 L160,130 L150,130 L150,140 L140,140 L140,130 L130,130 L130,120 Z" fill="#000000"/>
+                <path d="M90,120 L90,130 L100,130 L100,140 L90,140 L90,150 L80,150 L80,120 Z" fill="#000000"/>
+              </svg>
+            </div>
             <div class="order-number">
               <span>Order #</span>
               <span id="order-number">12345</span>

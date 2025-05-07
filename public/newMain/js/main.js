@@ -183,7 +183,7 @@ let selectedQuantity = 1;
     const itemElement = document.createElement('div');
     itemElement.className = 'menu-item';
     itemElement.innerHTML = `
-      <img src="${item.image}" alt="${item.name}" />
+      <img src="${item.image}" loading="eager" alt="${item.name}" />
       <div class="menu-item-info">
         <h3 class="menu-item-name">${item.name}</h3>
         <p class="menu-item-price">RM${item.price.toFixed(2)}</p>
@@ -403,7 +403,7 @@ function loadUpsellItems() {
       <div class="upsell-item-checkbox">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
       </div>
-      <img src="${item.image}" alt="${item.name}" />
+      <img src="${item.image}" loading="eager" alt="${item.name}" />
       <div class="upsell-item-info">
         <h3 class="upsell-item-name">${item.name}</h3>
         <p class="upsell-item-price">+RM${item.price.toFixed(2)}</p>

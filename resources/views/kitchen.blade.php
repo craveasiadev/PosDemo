@@ -19,25 +19,9 @@
   <body>
     <header>
       <div class="header-content">
+        <img src="{{asset('Main/img/logo-qbot.png')}}" alt="FastBite Logo" class="">
         <h1>Kitchen Display</h1>
-        {{-- <div class="header-stats">
-          <div class="stat-item">
-            <span class="stat-value">12</span>
-            <span class="stat-label">Active Orders</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-value">5</span>
-            <span class="stat-label">New</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-value">4</span>
-            <span class="stat-label">Preparing</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-value">3</span>
-            <span class="stat-label">Ready</span>
-          </div>
-        </div> --}}
+        
       </div>
     </header>
 

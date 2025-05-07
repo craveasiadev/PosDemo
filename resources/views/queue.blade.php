@@ -16,8 +16,9 @@
   <body>
     <div class="app-container">
       <header class="header">
+        <img src="{{asset('Main/img/logo-qbot.png')}}" alt="FastBite Logo" class="">
         <h1>Order Status</h1>
-        <p class="subtitle">Track your order in real-time</p>
+        <p class="subtitle"></p>
       </header>
 
       <main class="queue-container">
@@ -104,10 +105,7 @@
             <span class="order-time">${calculateElapsed(order.created_at)}</span>
           </div>
           
-          <div class="order-details">
-            <ul class="item-list">${orderItems}</ul>
-            <span class="order-status">${order.status}</span>
-          </div>
+          
           
         `;
         

@@ -58,7 +58,7 @@
   
   /* Header */
   .header {
-    background-color: var(--primary);
+ 
     color: white;
     padding: var(--space-3);
     display: flex;
