@@ -147,8 +147,8 @@
           </div>
         </div>
         <div class="start-order-container">
-          <button id="start-order-btn" class="primary-btn">Start Order</button>
-          
+          <button id="start-order-btn" class="primary-btn">Start Order</button> <br>
+          <img src="{{asset('Main/img/logo-qbot.png')}}" alt="FastBite Logo" class="">
         </div>
         <button id="fullscreen-btn" class="fullscreen-btn">Go Fullscreen</button>
       </div>
