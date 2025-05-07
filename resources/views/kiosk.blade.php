@@ -126,14 +126,14 @@
         <div class="ad-carousel">
           <div class="carousel-container">
             <div class="carousel-slide">
-              <img src="{{ asset('images/car1.jpeg')}}" alt="Delicious Burger Special" />
+              <img src="{{ asset('images/hamburger.jpg')}}" alt="Delicious Burger Special" />
               <div class="carousel-caption">
                 <h2>Try Our New Signature Burger</h2>
                 <p>Limited time offer</p>
               </div>
             </div>
             <div class="carousel-slide">
-              <img src="{{ asset('images/car2.jpeg')}}" alt="Breakfast Menu" />
+              <img src="{{ asset('images/frees.jpg')}}" alt="Breakfast Menu" />
               <div class="carousel-caption">
                 <h2>Breakfast Menu</h2>
                 <p>Available until 10:30 AM</p>

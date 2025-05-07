@@ -33,21 +33,21 @@ const categories = {
         name: 'Big Mac',
         price: 5.99,
         description: 'Iconic burger with special sauce, lettuce, cheese, pickles, onions on a sesame seed bun.',
-        image: '/images/bigmac.jpeg'
+        image: '/images/bigmacs.jpg'
       },
       {
         id: 'quarter-pounder',
         name: 'Quarter Pounder',
         price: 6.49,
         description: 'Fresh beef patty, onions, pickles, ketchup, and mustard on a sesame seed bun.',
-        image: '/images/quaeter.jpeg'
+        image: '/images/hamburger.jpg'
       },
       {
         id: 'cheeseburger',
         name: 'Cheeseburger',
         price: 3.99,
         description: 'Classic beef patty with cheese, onions, pickles, ketchup, and mustard.',
-        image: '/images/cheeseburger.jpeg'
+        image: '/images/chees.jpg'
       },
       
     ],
@@ -57,14 +57,14 @@ const categories = {
         name: 'French Fries',
         price: 2.49,
         description: 'Golden, crispy fries with just the right amount of salt.',
-        image: '/images/frenchfries.jpeg'
+        image: '/images/frees.jpg'
       },
       {
         id: 'apple-slices',
         name: 'Apple Slices',
         price: 1.99,
         description: 'Fresh, crisp apple slices - a healthier option.',
-        image: '/images/apple.jpeg'
+        image: '/images/applee.jpg'
       }
     ],
     'beverages': [
@@ -73,14 +73,14 @@ const categories = {
         name: 'Coca-Cola',
         price: 1.99,
         description: 'Refreshing Coca-Cola served with ice.',
-        image: '/images/cola.jpeg'
+        image: '/images/colaa.jpg'
       },
       {
         id: 'shake',
         name: 'Milkshake',
         price: 3.29,
         description: 'Creamy milkshake in chocolate, vanilla, or strawberry.',
-        image: '/images/shake.jpeg'
+        image: '/images/milky.jpg'
       }
     ],
     'family-bundles': [
@@ -89,7 +89,7 @@ const categories = {
         name: 'Family Bundle',
         price: 22.99,
         description: '2 Big Macs, 2 Cheeseburgers, 4 small fries, and 4 small drinks.',
-        image: 'https://images.pexels.com/photos/3616956/pexels-photo-3616956.jpeg'
+        image: '/images/hamburger.jpg'
       }
     ],
     'limited-time': [
@@ -98,7 +98,7 @@ const categories = {
         name: 'Signature Burger',
         price: 7.99,
         description: 'Limited time specialty burger with premium ingredients.',
-        image: 'https://images.pexels.com/photos/3616956/pexels-photo-3616956.jpeg'
+        image: '/images/hamburger.jpg'
       }
     ],
     'haircut': [
@@ -143,24 +143,24 @@ const categories = {
       id: 'upsell-fries',
       name: 'Upgrade to Large Fries',
       price: 1.50,
-      image: '/images/frenchfries.jpeg'
+      image: '/images/frees.jpg'
     },
     {
       id: 'upsell-drink',
       name: 'Upgrade to Large Drink',
       price: 1.00,
-      image: '/images/cola.jpeg'
+      image: '/images/colaa.jpg'
     },
     {
       id: 'upsell-apple-pie',
       name: 'Add Apple Pie',
       price: 1.99,
-      image: '/images/apple.jpeg'
+      image: '/images/applee.jpg'
     },
     {
       id: 'upsell-ice-cream',
       name: 'Add Soft Serve',
       price: 1.49,
-      image: 'https://images.pexels.com/photos/2846337/pexels-photo-2846337.jpeg'
+      image: '/images/milky.jpg'
     }
   ];
