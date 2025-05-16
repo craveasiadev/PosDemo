@@ -126,24 +126,23 @@
         <div class="ad-carousel">
           <div class="carousel-container">
             <div class="carousel-slide">
-              <img src="{{ asset('images/hamburger.jpg')}}" alt="Delicious Burger Special" />
-              <div class="carousel-caption">
-                <h2>Try Our New Signature Burger</h2>
-                <p>Limited time offer</p>
-              </div>
+              <img src="{{ asset('images/qbotposter1.jpg')}}" alt="Delicious Burger Special" />
+              
             </div>
             <div class="carousel-slide">
-              <img src="{{ asset('images/frees.jpg')}}" alt="Breakfast Menu" />
-              <div class="carousel-caption">
-                <h2>Breakfast Menu</h2>
-                <p>Available until 10:30 AM</p>
-              </div>
+              <img src="{{ asset('images/qbotposter2.jpg')}}" alt="Breakfast Menu" />
+              
+            </div>
+            <div class="carousel-slide">
+              <img src="{{ asset('images/qbotposter3.jpg')}}" alt="Breakfast Menu" />
+              
             </div>
             
           </div>
           <div class="carousel-dots">
             <span class="dot active" data-slide="0"></span>
             <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="3"></span>
           </div>
         </div>
         <div class="start-order-container">
