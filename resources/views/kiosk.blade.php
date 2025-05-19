@@ -48,14 +48,17 @@
   background: white;
   border-radius: 16px;
   padding: 30px 20px;
-  width: 320px;
+  width: 700px;        /* Increase width */
+  max-width: 90vw;     /* Responsive max width */
   text-align: center;
+  height: 800px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
   animation: fadeInUp 0.3s ease-out;
 }
 
+
 .modal-content img {
-  width: 120px;
+  width: 500px;   /* bigger image */
   height: auto;
   margin-bottom: 15px;
   border-radius: 12px;
@@ -289,26 +292,42 @@
         </header>
         
         <div class="cart-container">
-          <div class="cart-items">
-            <!-- Cart items will be dynamically loaded here -->
+          <div class="first-cart">
+              <div class="cart-items">
+                <!-- Cart items will be dynamically loaded here -->
+              </div>
+              
+              <div class="cart-summary">
+                <div class="summary-item">
+                  <span>Subtotal</span>
+                  <span id="subtotal">$0.00</span>
+                </div>
+                <div class="summary-item">
+                  <span>Tax</span>
+                  <span id="tax">$0.00</span>
+                </div>
+                <div class="summary-item total">
+                  <span>Total</span>
+                  <span id="total">$0.00</span>
+                </div>
+                
+                <button id="checkout-btn" class="primary-btn">Proceed to Checkout</button>
+              </div>
+          </div>
+        
+<h1 style="margin-top: 60px">What Would You Like to Add ?</h1>
+          <div class="second-cart">
+            <div class="upsell-container">
+          <div class="upsell-items">
+            <!-- Upsell items will be dynamically loaded here -->
           </div>
           
-          <div class="cart-summary">
-            <div class="summary-item">
-              <span>Subtotal</span>
-              <span id="subtotal">$0.00</span>
-            </div>
-            <div class="summary-item">
-              <span>Tax</span>
-              <span id="tax">$0.00</span>
-            </div>
-            <div class="summary-item total">
-              <span>Total</span>
-              <span id="total">$0.00</span>
-            </div>
-            
-            <button id="checkout-btn" class="primary-btn">Proceed to Checkout</button>
+         
+        </div>
           </div>
+          
+          
+        </div>
         </div>
       </div>
 
@@ -323,16 +342,7 @@
           </div>
         </header>
         
-        <div class="upsell-container">
-          <div class="upsell-items">
-            <!-- Upsell items will be dynamically loaded here -->
-          </div>
-          
-          <div class="upsell-actions">
-            <button id="skip-upsell" class="secondary-btn">No Thanks</button>
-            <button id="continue-to-payment" class="primary-btn">Continue to Payment</button>
-          </div>
-        </div>
+        
       </div>
 
       <!-- Payment Page -->

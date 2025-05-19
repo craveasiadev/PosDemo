@@ -193,12 +193,12 @@ const categories = {
       price: 1.00,
       image: '/images/colaa.jpg'
     },
-    {
-      id: 'upsell-apple-pie',
-      name: 'Add Apple Pie',
-      price: 1.99,
-      image: '/images/applee.jpg'
-    },
+    // {
+    //   id: 'upsell-apple-pie',
+    //   name: 'Add Apple Pie',
+    //   price: 1.99,
+    //   image: '/images/applee.jpg'
+    // },
     {
       id: 'upsell-ice-cream',
       name: 'Add Soft Serve',

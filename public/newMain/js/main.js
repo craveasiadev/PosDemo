@@ -63,6 +63,7 @@ function initEventListeners() {
   document.getElementById('view-cart-btn').addEventListener('click', () => {
     if (cart.length > 0) {
       updateCartPage();
+      loadUpsellItems();
       navigateTo('cart-page');
     } else {
       alert('Your cart is empty. Please add items to proceed.');
@@ -71,19 +72,12 @@ function initEventListeners() {
   document.getElementById('back-to-menu').addEventListener('click', () => navigateTo('menu-page'));
   document.getElementById('checkout-btn').addEventListener('click', () => {
     loadUpsellItems();
-    navigateTo('upsell-page');
+    addSelectedUpsellItemsToCart();
+     updatePaymentPage();
+    navigateTo('payment-page');
   });
   document.getElementById('back-to-cart').addEventListener('click', () => navigateTo('cart-page'));
-  document.getElementById('skip-upsell').addEventListener('click', () => {
-    updatePaymentPage();
-    navigateTo('payment-page');
-  });
-  document.getElementById('continue-to-payment').addEventListener('click', () => {
-    addSelectedUpsellItemsToCart();
-    updatePaymentPage();
-    navigateTo('payment-page');
-  });
-  document.getElementById('back-to-upsell').addEventListener('click', () => navigateTo('upsell-page'));
+  document.getElementById('back-to-upsell').addEventListener('click', () => navigateTo('cart-page'));
   document.getElementById('process-payment').addEventListener('click', processPayment);
   document.getElementById('new-order').addEventListener('click', startNewOrder);
   

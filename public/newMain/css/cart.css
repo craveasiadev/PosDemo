@@ -1,10 +1,32 @@
 /* Cart Page Styles */
 .cart-container {
-    padding: var(--spacing-lg);
-    height: calc(100% - 64px); /* Subtract header height */
-    display: flex;
-    flex-direction: column;
-  }
+  padding: var(--spacing-lg);
+  height: calc(100% - 64px); /* Subtract header height */
+  display: flex;
+  flex-direction: column; /* stack children vertically */
+  gap: var(--spacing-lg); /* optional space between children */
+}
+
+.first-cart {
+  padding: var(--spacing-lg);
+  display: flex;
+   flex: 0 0 auto;
+  flex-direction: row; /* cart-items + cart-summary side by side */
+  gap: var(--spacing-lg);
+
+}
+
+.second-cart {
+  padding: var(--spacing-lg);
+flex: 1 1 auto; /* take remaining space */
+  overflow-y: auto; /* scroll if content overflows */
+  display: flex;
+  flex-direction: row; /* cart-items + cart-summary side by side */
+  gap: var(--spacing-lg);
+width: 100%;
+}
+  
+  
   
   .cart-items {
     flex: 1;
@@ -146,7 +168,7 @@
   /* Responsive adjustments */
   @media (min-width: 768px) {
     .cart-container {
-      flex-direction: row;
+      /* flex-direction: row; */
       gap: var(--spacing-lg);
     }
     
