@@ -55,8 +55,11 @@ function initCarousel() {
 
 function initEventListeners() {
   // Navigation buttons
-  document.getElementById('start-order-btn').addEventListener('click', () => navigateTo('menu-page'));
-  document.getElementById('back-to-home').addEventListener('click', () => navigateTo('home-page'));
+  document.getElementById('start-order-btn').addEventListener('click', () => navigateTo('selection-page'));
+  document.getElementById('dine-in').addEventListener('click', () => navigateTo('menu-page'));
+  document.getElementById('take-away').addEventListener('click', () => navigateTo('menu-page'));
+  document.getElementById('cancel-selection').addEventListener('click', () => navigateTo('home-page'));
+  document.getElementById('back-to-home').addEventListener('click', () => navigateTo('selection-page'));
   document.getElementById('view-cart-btn').addEventListener('click', () => {
     if (cart.length > 0) {
       updateCartPage();
@@ -177,21 +180,18 @@ function loadMenuItems(subcategoryId) {
   }
 
   let selectedItem = null;
-let selectedQuantity = 1;
+  let selectedQuantity = 1;
   
   items.forEach(item => {
     const itemElement = document.createElement('div');
     itemElement.className = 'menu-item';
     itemElement.innerHTML = `
       <img src="${item.image}" loading="lazy" alt="${item.name}" />
-      <div class="menu-item-info">
+      <div class="menu-item-info add-to-cart" data-id="${item.id}">
         <h3 class="menu-item-name">${item.name}</h3>
         <p class="menu-item-price">RM${item.price.toFixed(2)}</p>
-        <p class="menu-item-description">${item.description}</p>
-        <button class="add-to-cart-btn" data-id="${item.id}">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
-          Add to Cart
-        </button>
+        
+       
       </div>
     `;
     
@@ -199,7 +199,7 @@ let selectedQuantity = 1;
    
 
     // Add to cart event listener
-    const addButton = itemElement.querySelector('.add-to-cart-btn');
+    const addButton = itemElement.querySelector('.add-to-cart');
     // addButton.addEventListener('click', () => addToCart(item));
     addButton.addEventListener('click', () => openQuantityModal(item));
       
@@ -234,6 +234,7 @@ function openQuantityModal(item) {
       addToCart(selectedItem);
     }
     document.getElementById('quantity-modal').classList.add('hidden');
+    updateCartTotals();
   });
   
   document.getElementById('cancel-add').addEventListener('click', () => {
@@ -383,6 +384,11 @@ function updateCartTotals() {
   document.getElementById('subtotal').textContent = `RM${subtotal.toFixed(2)}`;
   document.getElementById('tax').textContent = `RM${tax.toFixed(2)}`;
   document.getElementById('total').textContent = `RM${total.toFixed(2)}`;
+
+  const cartAmountDiv = document.querySelector('.cart-amount');
+  if (cartAmountDiv) {
+    cartAmountDiv.textContent = `RM${subtotal.toFixed(2)}`;
+  }
 }
 
 function calculateSubtotal() {

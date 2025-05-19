@@ -167,14 +167,14 @@
           <div class="options">
             <div class="option-card" id="dine-in">
               <div class="icon-container">
-                <img src="images/dinein.png" alt="Dine In Icon" class="option-icon">
+                <img src="images/dine-in-icon.svg" alt="Dine In Icon" class="option-icon">
               </div>
               <p class="option-text">Dine In</p>
             </div>
             
             <div class="option-card" id="take-away">
               <div class="icon-container">
-                <img src="images/takeaway.png" alt="Take Away Icon" class="option-icon">
+                <img src="images/take-away-icon.svg" alt="Take Away Icon" class="option-icon">
               </div>
               <p class="option-text">Take Away</p>
             </div>
@@ -186,17 +186,21 @@
 
       <!-- Menu Page -->
       <div id="menu-page" class="page">
-        <header class="">
-          <img src="{{ asset('images/qbotposter1.jpg')}}" alt="Delicious Burger Special" />
+        <header class="menu-header">
+          <div class="header-actions">
+            <button id="back-to-home" class="icon-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+            </button>
+            <h1> <img src="{{asset('Main/img/logo-qbot.png')}}" alt="FastBite Logo" class=""></h1>
+          </div>
+          <button id="view-cart-btn" class="cart-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+            <span id="cart-count">0</span>
+          </button>
         </header>
         
         <div class="menu-container">
-          
           <nav class="category-nav">
-            <div style="display: flex; align-items: center; justify-content:center; margin-bottom: 40px">
-                <img src="{{asset('images/qlogo.png')}}" alt="FastBite Logo" class="" width="50" height="50">
-            </div>
-          
             <ul class="main-categories">
               <li data-category="food-beverages" class="active">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 12h.01"/><path d="M21 12a9 9 0 0 1-9 9m9-9a9 9 0 0 0-9-9m9 9H3m9 9a9 9 0 0 1-9-9m9 9c-4.97 0-9-4.03-9-9m9 9a9 9 0 0 0 0-18m0 18c-4.97 0-9-4.03-9-9m9-9a9 9 0 0 1 9 9m-9-9c4.97 0 9 4.03 9 9"/></svg>
@@ -212,28 +216,6 @@
               </li>
             </ul>
             
-           
-            <!-- Quantity Modal -->
-            <div id="quantity-modal" class="quantity-modal hidden">
-                <div class="modal-content">
-                  <h3 id="modal-item-name"></h3>
-                  <img id="modal-item-image" src="" width="100" height="100" alt="" />
-                  <p id="modal-item-description"></p>
-                  <div class="quantity-selector">
-                    <button id="decrease-qty" class="quantity-btn">-</button>
-                    <span id="selected-qty">1</span>
-                    <button id="increase-qty" class="quantity-btn">+</button>
-                  </div>
-                  <div class="modal-actions">
-                    <button id="confirm-add" class="primary-btn">Add to Cart</button>
-                    <button id="cancel-add" class="secondary-btn">Cancel</button>
-                  </div>
-                </div>
-            </div>
-  
-          </nav>
-          
-          <div class="menu-items-container">
             <div class="sub-categories-container">
               <!-- Food & Beverages Subcategories -->
               <ul class="sub-categories" data-parent="food-beverages" style="display: block;">
@@ -255,28 +237,33 @@
                 <li data-subcategory="limited-time">Limited Time</li>
               </ul>
             </div>
+
+            <!-- Quantity Modal -->
+            <div id="quantity-modal" class="quantity-modal hidden">
+                <div class="modal-content">
+                  <h3 id="modal-item-name"></h3>
+                  <img id="modal-item-image" src="" alt="" />
+                  <p id="modal-item-description"></p>
+                  <div class="quantity-selector">
+                    <button id="decrease-qty" class="quantity-btn">-</button>
+                    <span id="selected-qty">1</span>
+                    <button id="increase-qty" class="quantity-btn">+</button>
+                  </div>
+                  <div class="modal-actions">
+                    <button id="confirm-add" class="primary-btn">Add to Cart</button>
+                    <button id="cancel-add" class="secondary-btn">Cancel</button>
+                  </div>
+                </div>
+            </div>
+  
+          </nav>
+          
+          <div class="menu-items-container">
             <h2 id="current-category">Burgers</h2>
             <div class="menu-items">
               <!-- Items will be dynamically loaded here -->
             </div>
           </div>
-
-          <!-- Bottom Navigation Bar -->
-          <nav class="bottom-bar">
-            <div class="cart-section">
-              <div class="cart-icon-wrapper" >
-                <img src="{{asset('images/qlogo.png')}}" alt="FastBite Logo" class="" width="30" height="30">
-                 <span id="cart-count">0</span>
-              </div>
-              <div class="cart-amount">RM0.00</div>
-            </div>
-          
-            <div class="action-buttons">
-              <button class="btn-yellow" id="view-cart-btn">Next</button>
-              <button class="btn-outline" id="back-to-home">Start Over</button>
-            </div>
-          </nav>
-
         </div>
       </div>
 
