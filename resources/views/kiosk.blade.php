@@ -126,10 +126,7 @@
       <div id="home-page" class="page active">
         <div class="ad-carousel">
           <div class="carousel-container">
-            <div class="carousel-slide">
-              <img src="{{ asset('images/qbotposter1.jpg')}}" alt="Delicious Burger Special" />
-              
-            </div>
+            
             <div class="carousel-slide">
               <img src="{{ asset('images/qbotposter2.jpg')}}" alt="Breakfast Menu" />
               
@@ -148,7 +145,7 @@
         </div>
         <div class="start-order-container">
           
-          <img src="images/qlogo.png" alt="QBot" width="80" height="80">
+          
           <button id="start-order-btn" class="primary-btn">Start Order</button>
         </div>
         <button id="fullscreen-btn" class="fullscreen-btn">Go Fullscreen</button>
@@ -187,7 +184,7 @@
       <!-- Menu Page -->
       <div id="menu-page" class="page">
         <header class="">
-          <img src="{{ asset('images/qbotposter1.jpg')}}" alt="Delicious Burger Special" />
+          <img src="{{ asset('images/bannerburger.jpg')}}" alt="Delicious Burger Special" />
         </header>
         
         <div class="menu-container">
@@ -233,7 +230,7 @@
   
           </nav>
           
-          <div class="menu-items-container">
+          <div class="menu-items-container" style="padding-bottom: 400px">
             <div class="sub-categories-container">
               <!-- Food & Beverages Subcategories -->
               <ul class="sub-categories" data-parent="food-beverages" style="display: block;">
@@ -265,7 +262,7 @@
           <nav class="bottom-bar">
             <div class="cart-section">
               <div class="cart-icon-wrapper" >
-                <img src="{{asset('images/qlogo.png')}}" alt="FastBite Logo" class="" width="30" height="30">
+                <img src="{{asset('images/qlogo.png')}}" alt="FastBite Logo" class="" width="70" height="70">
                  <span id="cart-count">0</span>
               </div>
               <div class="cart-amount">RM0.00</div>

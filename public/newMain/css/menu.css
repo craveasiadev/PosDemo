@@ -1,7 +1,7 @@
 /* Menu Page Styles */
 .menu-container {
     display: flex;
-   height: calc(100% - 180px); /* Subtract header height */
+   height: calc(100% - 210px); /* Subtract header height */
   }
   
   /* Category Navigation */
@@ -105,7 +105,7 @@
   
   .menu-items {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     gap: var(--spacing-lg);
   }
   
@@ -116,6 +116,7 @@
     box-shadow: var(--shadow-sm);
     transition: transform var(--transition-fast), box-shadow var(--transition-fast);
     cursor: pointer;
+    border: #707070 1px solid;
   }
   
   .menu-item:hover {
@@ -255,7 +256,7 @@
   }
 
   #menu-page > header {
-  height: 180px; /* or any fixed height you want */
+  height: 210px; /* or any fixed height you want */
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -280,7 +281,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 16px;
+  padding: 50px 16px;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   gap: 12px;
@@ -295,8 +296,8 @@
 
 .cart-icon-wrapper {
   position: relative;
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
 }
 
 .cart-icon {
@@ -319,7 +320,8 @@
 
 .cart-amount {
   font-weight: bold;
-  font-size: 18px;
+  font-size: 24px;
+  margin-left: 40px;
 }
 
 .action-buttons {
@@ -332,7 +334,7 @@
 .btn-yellow {
   background: #ffc107;
   border: none;
-  padding: 10px 20px;
+  padding: 20px 30px;
   font-weight: bold;
   font-size: 16px;
   color: black;
@@ -343,7 +345,7 @@
 .btn-outline {
   border: 2px solid #000;
   background: transparent;
-  padding: 10px 16px;
+  padding: 20px 26px;
   font-size: 16px;
   font-weight: bold;
   border-radius: 6px;
