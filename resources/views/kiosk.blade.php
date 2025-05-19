@@ -148,7 +148,7 @@
         </div>
         <div class="start-order-container">
           
-          <img src="images/qlogo.png" alt="QBot" width="70" height="70">
+          <img src="images/qlogo.png" alt="QBot" width="80" height="80">
           <button id="start-order-btn" class="primary-btn">Start Order</button>
         </div>
         <button id="fullscreen-btn" class="fullscreen-btn">Go Fullscreen</button>
@@ -157,7 +157,7 @@
       <div class="container" id="selection-page" class="page">
         <header>
           <div class="logo">
-            <img src="images/qlogo.png" alt="QBot">
+            <img src="images/qlogo.png" alt="QBot" style="height: 200px; width: 200px">
           </div>
         </header>
         
@@ -194,7 +194,7 @@
           
           <nav class="category-nav">
             <div style="display: flex; align-items: center; justify-content:center; margin-bottom: 40px">
-                <img src="{{asset('images/qlogo.png')}}" alt="FastBite Logo" class="" width="50" height="50">
+                <img src="{{asset('images/qlogo.png')}}" alt="FastBite Logo" class="" width="80" height="80">
             </div>
           
             <ul class="main-categories">
