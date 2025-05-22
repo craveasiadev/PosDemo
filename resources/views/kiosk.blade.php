@@ -131,11 +131,15 @@
           <div class="carousel-container">
             
             <div class="carousel-slide">
-              <img src="{{ asset('images/qbotposter2.jpg')}}" alt="Breakfast Menu" />
+              <img src="{{ asset('images/splash1.jpg')}}" alt="Breakfast Menu" />
               
             </div>
             <div class="carousel-slide">
-              <img src="{{ asset('images/qbotposter3.jpg')}}" alt="Breakfast Menu" />
+              <img src="{{ asset('images/splash2.jpg')}}" alt="Breakfast Menu" />
+              
+            </div>
+            <div class="carousel-slide">
+              <img src="{{ asset('images/splash3.jpg')}}" alt="Breakfast Menu" />
               
             </div>
             

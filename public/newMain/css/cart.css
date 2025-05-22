@@ -10,7 +10,7 @@
 .first-cart {
   padding: var(--spacing-lg);
   display: flex;
-   flex: 0 0 auto;
+  flex: 0 0 auto;
   flex-direction: row; /* cart-items + cart-summary side by side */
   gap: var(--spacing-lg);
 
@@ -18,12 +18,12 @@
 
 .second-cart {
   padding: var(--spacing-lg);
-flex: 1 1 auto; /* take remaining space */
+  flex: 1 1 auto; /* take remaining space */
   overflow-y: auto; /* scroll if content overflows */
   display: flex;
   flex-direction: row; /* cart-items + cart-summary side by side */
   gap: var(--spacing-lg);
-width: 100%;
+  width: 100%;
 }
   
   
