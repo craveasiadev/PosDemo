@@ -32,10 +32,10 @@ function initCarousel() {
   updateCarousel();
   
   // Auto-rotate carousel
-  setInterval(() => {
-    currentSlide = (currentSlide + 1) % slides.length;
-    updateCarousel();
-  }, 5000);
+  // setInterval(() => {
+  //   currentSlide = (currentSlide + 1) % slides.length;
+  //   updateCarousel();
+  // }, 5000);
   
   // Dot navigation
   dots.forEach((dot, index) => {

@@ -131,7 +131,7 @@
           <div class="carousel-container">
             
             <div class="carousel-slide">
-              <img src="{{ asset('images/splash1.jpg')}}" alt="Breakfast Menu" />
+              <video src="{{ asset('images/burger.mp4') }}" autoplay muted loop playsinline></video>
               
             </div>
             <div class="carousel-slide">

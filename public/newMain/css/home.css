@@ -27,6 +27,7 @@
     position: relative;
   }
   
+  .carousel-slide video,
   .carousel-slide img {
     width: 100%;
     height: 100%;
