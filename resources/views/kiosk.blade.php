@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{ asset('newMain/css/payment.css')}}" />
     <link rel="stylesheet" href="{{ asset('newMain/css/confirmation.css')}}" />
     <link rel="stylesheet" href="{{ asset('newMain/css/selection.css')}}" />
-    <style>
+    {{-- <style>
         .fullscreen-btn {
       padding: 10px 20px;
       font-size: 16px;
@@ -24,8 +24,18 @@
       cursor: pointer;
     }
     
+    .unmute-button {
+   padding: 10px 20px;
+      font-size: 16px;
+      background-color: #ffffff;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+}
+
     
-      </style>
+      </style> --}}
       <style>
        .quantity-modal {
   position: fixed;
@@ -113,16 +123,6 @@
   color: #333;
 }
 
-.unmute-button {
-   padding: 10px 20px;
-      font-size: 16px;
-      background-color: #ffffff;
-      color: #ffffff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-}
-
 @keyframes fadeInUp {
   from { transform: translateY(30px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
@@ -138,36 +138,41 @@
       <!-- Home Page -->
       <div id="home-page" class="page active">
         <div class="ad-carousel">
-          <div class="carousel-container">
-            
-            <div class="carousel-slide">
-               <video id="background-video" src="{{ asset('images/qbot-mcd.mp4') }}" autoplay muted loop playsinline></video>
-              
+            <div class="carousel-container" id="carouselContainer">
+                <div class="carousel-slide">
+                   <video id="background-video" src="{{ asset('images/qbot-mcd.mp4') }}" autoplay muted loop playsinline></video>
+                </div>
+                <div class="carousel-slide">
+                  <img src="{{ asset('images/splash2.jpg')}}" alt="Breakfast Menu" />
+                </div>
+                <div class="carousel-slide">
+                  <img src="{{ asset('images/splash3.jpg')}}" alt="Breakfast Menu" />
+                </div>
             </div>
-            <div class="carousel-slide">
-              <img src="{{ asset('images/splash2.jpg')}}" alt="Breakfast Menu" />
-              
-            </div>
-            <div class="carousel-slide">
-              <img src="{{ asset('images/splash3.jpg')}}" alt="Breakfast Menu" />
-              
-            </div>
-            
-          </div>
-          {{-- <div class="carousel-dots">
-            <span class="dot active" data-slide="0"></span>
-            <span class="dot" data-slide="1"></span>
-            <span class="dot" data-slide="3"></span>
-          </div> --}}
+            {{-- <div class="carousel-dots" id="carouselDots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span> {{-- Corrected to 2 for 3 slides --}}
+            </div> --}}
         </div>
-        <div class="start-order-container">
-          
-          
-          <button id="start-order-btn" class="primary-btn">Start Order</button>
+
+        <div class="start-order-overlay">
+            <div class="card-option" id="start-order-btn1">
+                <img src="{{ asset('images/dinein.png') }}" alt="Dine In" class="card-icon"> {{-- Add your icon paths --}}
+                <span class="card-text">Dine In</span>
+            </div>
+            <div class="card-option" id="start-order-btn2">
+                <img src="{{ asset('images/takeaway.png') }}" alt="Take Away" class="card-icon"> {{-- Add your icon paths --}}
+                <span class="card-text">Take Away</span>
+            </div>
+            {{-- Original start order button removed or repurposed --}}
+            {{-- The old start-order-btn can be repurposed or removed depending on whether dine-in/take-away replaces it --}}
+            {{-- <button id="start-order-btn" class="primary-btn">Start Order</button> --}}
         </div>
-        <button id="fullscreen-btn" class="fullscreen-btn">Go Fullscreen</button>
-        <button id="unmuteBtn" class="unmute-button">Unmute</button>
-      </div>
+
+        <button id="fullscreen-btn" class="control-btn top-left-btn"></button>
+        <button id="unmuteBtn" class="control-btn top-right-btn mute-icon"></button>
+    </div>
 
       <div class="container" id="selection-page" class="page">
         <header>
@@ -330,7 +335,7 @@
               </div>
           </div>
         
-<h1 style="margin-top: 60px">What Would You Like to Add ?</h1>
+          <h1 style="margin-top: 60px">What Would You Like to Add ?</h1>
           <div class="second-cart">
             <div class="upsell-container">
           <div class="upsell-items">

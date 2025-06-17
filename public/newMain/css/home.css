@@ -1,133 +1,268 @@
-/* Home Page Styles */
 #home-page {
-    background-color: var(--white);
+    width: 100vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
-  }
-  
-  /* Ad Carousel */
-  .ad-carousel {
+    position: relative; /* Crucial for absolute positioning of overlays */
+    overflow: hidden; /* Ensure nothing spills out of the page div */
+}
+
+/* Ad Carousel - Full Screen */
+.ad-carousel {
+    position: absolute; /* Take over the whole home-page area */
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .carousel-container {
+    overflow: hidden; /* Hide overflowing slides */
+}
+
+.carousel-container {
     width: 100%;
     height: 100%;
     display: flex;
-    transition: transform var(--transition-slow);
-  }
-  
-  .carousel-slide {
-    min-width: 100%;
-    height: 100%;
-    position: relative;
-  }
-  
-  .carousel-slide video,
-  .carousel-slide img {
+    transition: transform 0.8s ease-in-out; /* Smooth transition for slides */
+}
+
+.carousel-slide {
+    min-width: 100%; /* Each slide takes full width */
+    height: 100%; /* Each slide takes full height */
+    flex-shrink: 0; /* Prevent slides from shrinking */
+    position: relative; /* For content positioning inside slide if any */
+}
+
+.carousel-slide video,
+.carousel-slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
-  
-  .carousel-caption {
+    /* Using calc() for object-position: */
+    /*
+       - calc(50% + 20px) : This means "center the content, then shift it 20 pixels to the right".
+       - calc(50% - 20px) : This would shift it 20 pixels to the left from the center.
+       - The second value (50%) keeps it vertically centered.
+    */
+    object-position: calc(50% - 1000px) 50%; /* Example: Shift 20px right from center */
+}
+/* Carousel Dots (overlayed on carousel) */
+.carousel-dots {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: var(--spacing-xl);
-    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-    color: var(--white);
-    text-align: left;
-  }
-  
-  .carousel-caption h2 {
-    font-size: 32px;
-    margin-bottom: var(--spacing-sm);
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-  }
-  
-  .carousel-caption p {
-    font-size: 18px;
-    opacity: 0.9;
-  }
-  
-  .carousel-dots {
-    position: absolute;
-    bottom: var(--spacing-xl);
-    right: var(--spacing-xl);
+    bottom: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
     display: flex;
-    gap: var(--spacing-sm);
-  }
-  
-  .dot {
+    gap: 10px;
+    z-index: 10; /* Ensure dots are above video/images */
+}
+
+.dot {
     width: 12px;
     height: 12px;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.6);
     cursor: pointer;
-    transition: all var(--transition-fast);
-  }
-  
-  .dot:hover {
-    background-color: rgba(255, 255, 255, 0.9);
-  }
-  
-  .dot.active {
-    background-color: var(--primary);
-    transform: scale(1.2);
-  }
-  
-  /* Start Order Section */
-.start-order-container {
-  flex: 1;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center; /* Center all items horizontally */
-  gap: 20px; /* Add a nice space between image and button */
-  padding: var(--spacing-lg);
-  background-color: var(--white);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.1); /* Subtle border for visibility */
 }
 
-  
-  #start-order-btn {
-    font-size: 20px;
-    padding: var(--spacing-lg) var(--spacing-xxl);
-    animation: pulse 2s infinite;
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .carousel-caption h2 {
-      font-size: 24px;
+.dot:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.dot.active {
+    background-color: var(--primary, #007bff); /* Use primary color if defined, else blue */
+    transform: scale(1.2);
+    border-color: rgba(255,255,255,0.8);
+}
+
+
+.start-order-overlay {
+    position: absolute;
+    bottom: 50px; /* Keep consistent distance from bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    gap: 40px; /* Increased space between cards for better separation */
+    width: 90%; /* Allow cards to take up more width */
+    max-width: 900px; /* Increased max width for larger screens */
+    justify-content: center;
+    align-items: center;
+}
+
+.card-option {
+    background-color: rgba(255, 255, 255, 0.98); /* Slightly less transparent for more solid look */
+    border-radius: 20px; /* More rounded corners for a softer, bolder look */
+    padding: 40px 50px; /* Increased padding to make cards larger */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35); /* More prominent shadow */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    flex: 1;
+    min-width: 200px; /* Increased minimum width */
+    max-width: 400px; /* Increased maximum width */
+}
+
+.card-option:hover {
+    transform: translateY(-8px) scale(1.02); /* More pronounced lift and slight scale on hover */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45); /* Even stronger shadow on hover */
+    background-color: #ffffff; /* Fully opaque on hover for a crisp look */
+}
+
+.card-icon {
+    width: 100px; /* Larger icon size */
+    height: 100px;
+    margin-bottom: 25px; /* More space below icon */
+}
+
+.card-text {
+    font-size: 2.8em; /* Significantly larger text */
+    font-weight: 700; /* Bolder font weight */
+    color: #222; /* Slightly darker text for better contrast */
+    text-align: center;
+    white-space: nowrap;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle text shadow for visibility */
+}
+
+/* Control Buttons (Fullscreen & Unmute) - Hidden but clickable */
+.control-btn {
+    position: absolute;
+    width: 60px; /* Increase hit area for hidden button */
+    height: 60px; /* Increase hit area */
+    background-color: transparent; /* Make background transparent */
+    border: none;
+    cursor: pointer;
+    z-index: 20; /* Ensure they are on top of everything */
+    color: transparent; /* Hide text if any, but keep hover effect */
+    font-size: 0; /* Hide text */
+    transition: background-color 0.3s ease;
+    border-radius: 50%; /* Make them circular hit areas */
+}
+
+.control-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle hover effect */
+}
+
+/* Specific positioning */
+.top-left-btn {
+    top: 20px;
+    left: 20px;
+}
+
+.top-right-btn {
+    top: 20px;
+    right: 20px;
+}
+
+/* Icons for unmute/mute */
+.mute-icon::before, .unmute-icon::before {
+    font-size: 30px; /* Size of the icon */
+    color: rgba(255, 255, 255, 0.7); /* Slightly visible white */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.mute-icon::before {
+    content: "🔇"; /* Muted speaker symbol */
+}
+
+.unmute-icon::before {
+    content: "🔊"; /* Speaker symbol */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .start-order-overlay {
+        bottom: 30px;
+        gap: 30px;
+        width: 90%;
+        max-width: 700px; /* Adjust max-width for medium screens */
     }
-    
-    .carousel-caption p {
-      font-size: 16px;
+    .card-option {
+        padding: 30px 40px;
+        min-width: 180px;
+        max-width: 350px;
     }
-    
-    #start-order-btn {
-      font-size: 18px;
-      padding: var(--spacing-md) var(--spacing-xl);
+    .card-icon {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 20px;
     }
-  }
-  
-  @media (max-width: 480px) {
-    .carousel-caption {
-      padding: var(--spacing-lg);
+    .card-text {
+        font-size: 2.4em;
     }
-    
-    .carousel-caption h2 {
-      font-size: 20px;
+    .control-btn {
+        width: 50px;
+        height: 50px;
     }
-    
+    .mute-icon::before, .unmute-icon::before {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .start-order-overlay {
+        flex-direction: column; /* Stack cards vertically */
+        bottom: 20px;
+        width: 95%;
+        gap: 20px; /* Space between stacked cards */
+    }
+    .card-option {
+        width: 90%; /* Cards take almost full width when stacked */
+        max-width: 450px; /* Limit max width when stacked */
+        padding: 30px;
+    }
+    .card-icon {
+        width: 90px;
+        height: 90px;
+        margin-bottom: 20px;
+    }
+    .card-text {
+        font-size: 2.5em; /* Keep text relatively large when stacked */
+    }
     .carousel-dots {
-      bottom: var(--spacing-lg);
-      right: var(--spacing-lg);
+        bottom: 10px;
+        right: 10px;
+        gap: 8px;
     }
-  }
+    .dot {
+        width: 10px;
+        height: 10px;
+    }
+    .control-btn {
+        width: 40px;
+        height: 40px;
+        top: 10px;
+        left: 10px; /* Adjusted for smaller screens */
+    }
+    .top-right-btn {
+        right: 10px; /* Adjusted for smaller screens */
+    }
+    .mute-icon::before, .unmute-icon::before {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .start-order-overlay {
+        gap: 15px;
+        bottom: 10px;
+    }
+    .card-option {
+        padding: 25px;
+        border-radius: 15px;
+    }
+    .card-icon {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 15px;
+    }
+    .card-text {
+        font-size: 2em;
+    }
+}

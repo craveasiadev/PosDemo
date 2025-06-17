@@ -55,11 +55,12 @@ function initCarousel() {
 
 function initEventListeners() {
   // Navigation buttons
-  document.getElementById('start-order-btn').addEventListener('click', () => navigateTo('selection-page'));
+  document.getElementById('start-order-btn1').addEventListener('click', () => navigateTo('menu-page'));
+  document.getElementById('start-order-btn2').addEventListener('click', () => navigateTo('menu-page'));
   document.getElementById('dine-in').addEventListener('click', () => navigateTo('menu-page'));
   document.getElementById('take-away').addEventListener('click', () => navigateTo('menu-page'));
   document.getElementById('cancel-selection').addEventListener('click', () => navigateTo('home-page'));
-  document.getElementById('back-to-home').addEventListener('click', () => navigateTo('selection-page'));
+  document.getElementById('back-to-home').addEventListener('click', () => navigateTo('home-page'));
   document.getElementById('view-cart-btn').addEventListener('click', () => {
     if (cart.length > 0) {
       updateCartPage();
