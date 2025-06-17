@@ -67,7 +67,7 @@ function initEventListeners() {
       loadUpsellItems();
       navigateTo('cart-page');
     } else {
-      alert('Your cart is empty. Please add items to proceed.');
+      // alert('Your cart is empty. Please add items to proceed.');
     }
   });
   document.getElementById('back-to-menu').addEventListener('click', () => navigateTo('menu-page'));
