@@ -8,9 +8,6 @@
     {{-- Original CSS links --}}
     <link rel="stylesheet" href="{{ asset('QDS/css/main.css')}}">
 
-    {{-- New global styles for modern layout --}}
-    <link rel="stylesheet" href="{{ asset('css/modern-queue-display.css') }}"> 
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600&display=swap" rel="stylesheet">
