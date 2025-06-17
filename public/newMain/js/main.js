@@ -20,7 +20,20 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Initialize event listeners
   initEventListeners();
+
+  updateNextVisibility();
+
 });
+
+function updateNextVisibility() {
+  const viewCart = document.getElementById('view-cart-btn');
+
+  if (cart.length > 0) {
+      viewCart.style.display = "block"
+    } else {
+      viewCart.style.display = "none"
+    }
+}
 
 function initCarousel() {
   const carouselContainer = document.querySelector('.carousel-container');
@@ -384,6 +397,8 @@ function updateCartTotals() {
   if (cartAmountDiv) {
     cartAmountDiv.textContent = `RM${subtotal.toFixed(2)}`;
   }
+
+  updateNextVisibility();
 }
 
 function calculateSubtotal() {
