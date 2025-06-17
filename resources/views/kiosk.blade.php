@@ -113,6 +113,16 @@
   color: #333;
 }
 
+.unmute-button {
+   padding: 10px 20px;
+      font-size: 16px;
+      background-color: #ffffff;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+}
+
 @keyframes fadeInUp {
   from { transform: translateY(30px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
@@ -131,7 +141,7 @@
           <div class="carousel-container">
             
             <div class="carousel-slide">
-              <video src="{{ asset('images/burger.mp4') }}" autoplay muted loop playsinline></video>
+               <video id="background-video" src="{{ asset('images/qbot-mcd.mp4') }}" autoplay muted loop playsinline></video>
               
             </div>
             <div class="carousel-slide">
@@ -144,11 +154,11 @@
             </div>
             
           </div>
-          <div class="carousel-dots">
+          {{-- <div class="carousel-dots">
             <span class="dot active" data-slide="0"></span>
             <span class="dot" data-slide="1"></span>
             <span class="dot" data-slide="3"></span>
-          </div>
+          </div> --}}
         </div>
         <div class="start-order-container">
           
@@ -156,6 +166,7 @@
           <button id="start-order-btn" class="primary-btn">Start Order</button>
         </div>
         <button id="fullscreen-btn" class="fullscreen-btn">Go Fullscreen</button>
+        <button id="unmuteBtn" class="unmute-button">Unmute</button>
       </div>
 
       <div class="container" id="selection-page" class="page">
@@ -499,6 +510,36 @@
 
     <script src="{{ asset('newMain/js/data.js')}}"></script>
     <script src="{{ asset('newMain/js/main.js')}}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const video = document.getElementById('background-video');
+            const unmuteBtn = document.getElementById('unmuteBtn');
+
+            // Initially, the video will autoplay muted.
+            // If autoplay with sound is blocked, this button provides the user interaction.
+
+            unmuteBtn.addEventListener('click', () => {
+                if (video.muted) {
+                    video.muted = false; // Unmute the video
+                    unmuteBtn.textContent = 'Muted'; // Change button text
+                    unmuteBtn.classList.add('hidden'); // Hide button after unmute
+                    // Optionally, you might want to show a mute button later
+                } else {
+                    // In case you want a toggle mute functionality
+                    video.muted = true;
+                    unmuteBtn.textContent = 'Unmute';
+                }
+            });
+
+            // Optional: If for some reason autoplay fails even muted,
+            // you might want to try playing it after the DOM loads.
+            // However, browsers usually handle muted autoplay fine.
+            video.play().catch(error => {
+                console.log('Autoplay was prevented (even muted). User interaction needed.', error);
+                // In this rare case, the unmute button is even more crucial.
+            });
+        });
+    </script>
     <script>
         document.getElementById('fullscreen-btn').addEventListener('click', function () {
       if (!document.fullscreenElement &&  // Check if not in fullscreen mode

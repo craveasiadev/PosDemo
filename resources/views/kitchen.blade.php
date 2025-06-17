@@ -19,7 +19,7 @@
   <body>
     <header>
       <div class="header-content">
-        <img src="{{asset('Main/img/logo-qbot.png')}}" alt="FastBite Logo" class="">
+        <img src="{{asset('images/qlogo.png')}}" alt="FastBite Logo" class="" width="100">
         <h1>Kitchen Display</h1>
         
       </div>
