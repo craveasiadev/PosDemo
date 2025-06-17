@@ -518,32 +518,23 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const video = document.getElementById('background-video');
-            const startOrderBtn = document.getElementById('start-order-btn');
+            const startOrderBtn1 = document.getElementById('start-order-btn1');
+            const startOrderBtn2 = document.getElementById('start-order-btn2');
 
             // Initial state: Video is autoplaying muted. Button shows mute icon.
             // When the button is clicked, it will unmute the video.
-            startOrderBtn.addEventListener('click', () => {
-                if (video.muted) {
-                    video.muted = false; // Unmute the video
-                    // Optionally, remove the mute icon and add an unmute icon
-                    startOrderBtn.classList.remove('mute-icon');
-                    startOrderBtn.classList.add('unmute-icon');
-                    // You might change the text too if desired:
-                    // startOrderBtn.textContent = 'Continue Ordering (Sound On)';
+            startOrderBtn1.addEventListener('click', () => {
 
-                    // Since this is typically a "start" button, you might
-                    // want to navigate or perform other actions after unmuting.
-                    // For example:
-                    // window.location.href = '/order-page'; // Go to next page
-                } else {
                     // If the button is clicked again and video is already unmuted,
                     // you could toggle it back to mute. This depends on your UX flow.
                     // For a "Start Order" button, a single unmute on click is often enough.
                     video.muted = true;
-                    startOrderBtn.classList.remove('unmute-icon');
-                    startOrderBtn.classList.add('mute-icon');
-                    // startOrderBtn.textContent = 'Start Order (Sound Off)';
-                }
+
+
+            });
+
+            startOrderBtn2.addEventListener('click', () => {
+                 video.muted = true;
             });
 
             // Ensure video tries to play even if autoplay is initially blocked
