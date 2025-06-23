@@ -1,0 +1,281 @@
+#home-page {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative; /* Crucial for absolute positioning of overlays */
+    overflow: hidden; /* Ensure nothing spills out of the page div */
+}
+
+/* Ad Carousel - Full Screen */
+.ad-carousel {
+    position: absolute; /* Take over the whole home-page area */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Hide overflowing slides */
+}
+
+.carousel-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: transform 0.8s ease-in-out; /* Smooth transition for slides */
+}
+
+.carousel-slide {
+    min-width: 100%; /* Each slide takes full width */
+    height: 100%; /* Each slide takes full height */
+    flex-shrink: 0; /* Prevent slides from shrinking */
+    position: relative; /* For content positioning inside slide if any */
+}
+
+.carousel-slide video,
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Using calc() for object-position: */
+
+}
+/* Carousel Dots (overlayed on carousel) */
+.carousel-dots {
+    position: absolute;
+    bottom: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    display: flex;
+    gap: 10px;
+    z-index: 10; /* Ensure dots are above video/images */
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.1); /* Subtle border for visibility */
+}
+
+.dot:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.dot.active {
+    background-color: var(--primary, #007bff); /* Use primary color if defined, else blue */
+    transform: scale(1.2);
+    border-color: rgba(255,255,255,0.8);
+}
+
+
+.start-order-overlay {
+    position: absolute;
+    bottom: 50px; /* Keep consistent distance from bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    gap: 40px; /* Increased space between cards for better separation */
+    width: 90%; /* Allow cards to take up more width */
+    max-width: 900px; /* Increased max width for larger screens */
+    justify-content: center;
+    align-items: center;
+}
+
+.head-order-overlay {
+    position: absolute;
+    top: 50px; /* Keep consistent distance from bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    gap: 40px; /* Increased space between cards for better separation */
+    width: 90%; /* Allow cards to take up more width */
+    max-width: 900px; /* Increased max width for larger screens */
+    justify-content: center;
+    align-items: center;
+}
+
+.fitlogo {
+    width: 300px !important;
+}
+
+.card-option {
+    background-color: rgba(255, 255, 255, 0.98); /* Slightly less transparent for more solid look */
+    border-radius: 20px; /* More rounded corners for a softer, bolder look */
+    padding: 40px 50px; /* Increased padding to make cards larger */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35); /* More prominent shadow */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    flex: 1;
+    min-width: 200px; /* Increased minimum width */
+    max-width: 400px; /* Increased maximum width */
+}
+
+.card-option:hover {
+    transform: translateY(-8px) scale(1.02); /* More pronounced lift and slight scale on hover */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45); /* Even stronger shadow on hover */
+    background-color: #ffffff; /* Fully opaque on hover for a crisp look */
+}
+
+.card-icon {
+    width: 100px; /* Larger icon size */
+    height: 100px;
+    margin-bottom: 25px; /* More space below icon */
+}
+
+.card-text {
+    font-size: 2.8em; /* Significantly larger text */
+    font-weight: 700; /* Bolder font weight */
+    color: #222; /* Slightly darker text for better contrast */
+    text-align: center;
+    white-space: nowrap;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle text shadow for visibility */
+}
+
+/* Control Buttons (Fullscreen & Unmute) - Hidden but clickable */
+.control-btn {
+    position: absolute;
+    width: 60px; /* Increase hit area for hidden button */
+    height: 60px; /* Increase hit area */
+    background-color: transparent; /* Make background transparent */
+    border: none;
+    cursor: pointer;
+    z-index: 20; /* Ensure they are on top of everything */
+    color: transparent; /* Hide text if any, but keep hover effect */
+    font-size: 0; /* Hide text */
+    transition: background-color 0.3s ease;
+    border-radius: 50%; /* Make them circular hit areas */
+}
+
+.control-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle hover effect */
+}
+
+/* Specific positioning */
+.top-left-btn {
+    top: 60px;
+    right: 20px;
+}
+
+.top-right-btn {
+    top: 20px;
+    right: 20px;
+}
+
+/* Icons for unmute/mute */
+.mute-icon::before, .unmute-icon::before {
+    font-size: 30px; /* Size of the icon */
+    color: rgba(255, 255, 255, 0.7); /* Slightly visible white */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.mute-icon::before {
+    content: "🔇"; /* Muted speaker symbol */
+}
+
+.unmute-icon::before {
+    content: "🔊"; /* Speaker symbol */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .start-order-overlay {
+        bottom: 30px;
+        gap: 30px;
+        width: 90%;
+        max-width: 700px; /* Adjust max-width for medium screens */
+    }
+    .card-option {
+        padding: 30px 40px;
+        min-width: 180px;
+        max-width: 350px;
+    }
+    .card-icon {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 20px;
+    }
+    .card-text {
+        font-size: 2.4em;
+    }
+    .control-btn {
+        width: 50px;
+        height: 50px;
+    }
+    .mute-icon::before, .unmute-icon::before {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .start-order-overlay {
+        flex-direction: column; /* Stack cards vertically */
+        bottom: 20px;
+        width: 95%;
+        gap: 20px; /* Space between stacked cards */
+    }
+    .card-option {
+        width: 90%; /* Cards take almost full width when stacked */
+        max-width: 450px; /* Limit max width when stacked */
+        padding: 30px;
+    }
+    .card-icon {
+        width: 90px;
+        height: 90px;
+        margin-bottom: 20px;
+    }
+    .card-text {
+        font-size: 2.5em; /* Keep text relatively large when stacked */
+    }
+    .carousel-dots {
+        bottom: 10px;
+        right: 10px;
+        gap: 8px;
+    }
+    .dot {
+        width: 10px;
+        height: 10px;
+    }
+    .control-btn {
+        width: 40px;
+        height: 40px;
+        top: 10px;
+        left: 10px; /* Adjusted for smaller screens */
+    }
+    .top-right-btn {
+        right: 10px; /* Adjusted for smaller screens */
+    }
+    .mute-icon::before, .unmute-icon::before {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .start-order-overlay {
+        gap: 15px;
+        bottom: 10px;
+    }
+    .card-option {
+        padding: 25px;
+        border-radius: 15px;
+    }
+    .card-icon {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 15px;
+    }
+    .card-text {
+        font-size: 2em;
+    }
+}

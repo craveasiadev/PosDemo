@@ -23,6 +23,10 @@ class DisplayController extends Controller
         return view('kiosk');
     }
 
+    public function kioskgym() {
+        return view('kioskgym');
+    }
+
     public function store(Request $request) {
         $orders = Cache::get('orders', []);
         $orders[] = [

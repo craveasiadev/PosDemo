@@ -1,0 +1,364 @@
+:root {
+  /* Color system */
+  --color-mcd-yellow: #ffbc0d;
+  --color-mcd-red: #DB0007;
+  --color-black: #292929;
+  --color-dark-gray: #3d3d3d;
+  --color-medium-gray: #757575;
+  --color-light-gray: #e0e0e0;
+  --color-white: #ffffff;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.05), 0 4px 6px rgba(0, 0, 0, 0.05);
+  
+  /* Spacing system (based on 8px) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+  --space-7: 64px;
+  --space-8: 96px;
+  
+  /* Typography */
+  --font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+  --font-size-3xl: 2.5rem;
+  
+  /* Line heights */
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  
+  /* Border radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow: 350ms ease;
+}
+
+
+.container {
+  max-width: 800px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header & Logo */
+header {
+  padding: var(--space-4) 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo img {
+  width: 100%;
+  height: auto;
+}
+
+/* Main content */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-5) 0;
+}
+
+h1 {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: var(--space-6);
+  color: var(--color-black);
+  line-height: var(--line-height-tight);
+}
+
+/* Option cards */
+.options {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-4);
+  width: 100%;
+  margin-bottom: var(--space-6);
+}
+
+.option-card {
+  flex: 1;
+  max-width: 280px;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-light-gray);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  cursor: pointer;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.option-card:hover, .option-card:focus {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.option-card:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+.icon-container {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: var(--space-4);
+}
+
+.option-icon {
+  width: 100%;
+  height: auto;
+}
+
+.option-text {
+  font-size: var(--font-size-xl);
+  font-weight: 500;
+  text-align: center;
+  color: var(--color-black);
+}
+
+/* Cancel button */
+.cancel-button {
+  width: 100%;
+  max-width: 600px;
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--font-size-lg);
+  font-weight: 500;
+  text-align: center;
+  color: var(--color-black);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-light-gray);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background-color var(--transition-normal), box-shadow var(--transition-normal);
+  box-shadow: var(--shadow-sm);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cancel-button:hover, .cancel-button:focus {
+  background-color: var(--color-light-gray);
+  box-shadow: var(--shadow-md);
+}
+
+.cancel-button:active {
+  transform: translateY(1px);
+  box-shadow: var(--shadow-sm);
+}
+
+
+@media (max-width: 576px) {
+  .container {
+    padding: var(--space-3);
+  }
+  
+  h1 {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--space-4);
+    padding: 0 var(--space-2);
+  }
+  
+  .options {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-3);
+  }
+  
+  .option-card {
+    width: 100%;
+    max-width: 240px;
+    aspect-ratio: 4/3;
+  }
+  
+  .icon-container {
+    width: 70px;
+    height: 70px;
+    margin-bottom: var(--space-2);
+  }
+  
+  .option-text {
+    font-size: var(--font-size-lg);
+  }
+  
+  .cancel-button {
+    max-width: 280px;
+    padding: var(--space-2) var(--space-3);
+  }
+}
+
+/* Medium devices (tablets, 577px to 768px) */
+@media (min-width: 577px) and (max-width: 768px) {
+  h1 {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--space-5);
+  }
+  
+  .options {
+    gap: var(--space-3);
+  }
+  
+  .option-card {
+    max-width: 220px;
+  }
+  
+  .icon-container {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* Large devices (desktops, 769px and up) */
+@media (min-width: 769px) {
+  .container {
+    padding: var(--space-5);
+  }
+  
+  h1 {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .options {
+    gap: var(--space-5);
+  }
+  
+  .option-card {
+    transition: transform 0.3s var(--transition-normal);
+  }
+  
+  .option-card:hover {
+    transform: translateY(-8px);
+  }
+}
+
+
+
+
+.option-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 70%);
+  opacity: 0;
+  transform: scale(2);
+  transition: opacity var(--transition-normal), transform var(--transition-fast);
+  pointer-events: none;
+}
+
+.option-card:hover::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Subtle pulse animation for the icons */
+@keyframes subtle-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.option-card:hover .option-icon {
+  animation: subtle-pulse 1.5s infinite ease-in-out;
+}
+
+/* Selection feedback animation */
+@keyframes selection-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 188, 13, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 188, 13, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 188, 13, 0);
+  }
+}
+
+.option-card:active {
+  animation: selection-pulse 0.5s 1;
+}
+
+/* Button press effect */
+.cancel-button:active {
+  transform: translateY(2px);
+  transition: transform 0.1s;
+}
+
+/* Fade-in animation for the whole page */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body {
+  animation: fade-in 0.6s ease-out;
+}
+
+.logo {
+  animation: fade-in 0.8s ease-out;
+}
+
+h1 {
+  animation: fade-in 1s ease-out;
+}
+
+.options {
+  animation: fade-in 1.2s ease-out;
+}
+
+.cancel-button {
+  animation: fade-in 1.4s ease-out;
+}

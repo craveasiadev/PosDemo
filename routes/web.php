@@ -12,6 +12,7 @@ Route::get('/kitchen', [DisplayController::class, 'kitchen']);
 Route::get('/queue', [DisplayController::class, 'queue']);
 Route::get('/test-order', [DisplayController::class, 'testOrder']);
 Route::get('/kiosk', [DisplayController::class, 'kiosk']);
+Route::get('/fitness', [DisplayController::class, 'kioskgym']);
 Route::post('/orders', [DisplayController::class, 'store']);
 Route::get('/api/orders', [DisplayController::class, 'fetchOrders']);
 
