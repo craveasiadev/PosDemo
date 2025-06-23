@@ -323,6 +323,16 @@
         </header>
         
         <div class="cart-container">
+            <h1 style="margin-top: 60px">What Would You Like to Add ?</h1>
+          <div class="second-cart">
+            <div class="upsell-container">
+              <div class="upsell-items">
+                <!-- Upsell items will be dynamically loaded here -->
+              </div>
+              
+             
+            </div>
+          </div>
           <div class="first-cart">
               <div class="cart-items">
                 <!-- Cart items will be dynamically loaded here -->
@@ -346,16 +356,7 @@
               </div>
           </div>
         
-          <h1 style="margin-top: 60px">What Would You Like to Add ?</h1>
-          <div class="second-cart">
-            <div class="upsell-container">
-          <div class="upsell-items">
-            <!-- Upsell items will be dynamically loaded here -->
-          </div>
           
-         
-        </div>
-          </div>
           
           
         </div>

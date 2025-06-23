@@ -1,7 +1,7 @@
 /* Upsell Page Styles */
 .upsell-container {
     padding: var(--spacing-lg);
-    height: calc(100% - 64px); /* Subtract header height */
+    height: 100% !important;
     display: flex;
     flex-direction: row;
     width: 100%;

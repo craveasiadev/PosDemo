@@ -18,7 +18,7 @@
 
 .second-cart {
   padding: var(--spacing-lg);
-  flex: 1 1 auto; /* take remaining space */
+height: 400px;
   overflow-y: auto; /* scroll if content overflows */
   display: flex;
   flex-direction: row; /* cart-items + cart-summary side by side */
