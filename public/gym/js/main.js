@@ -475,11 +475,16 @@ function processPayment() {
     const originalText = payButton.textContent;
     payButton.textContent = 'Processing...';
     payButton.disabled = true;
-    
-    // Get CSRF token directly
 
-    
-   navigateTo('confirmation-page');
+      // Call updateConfirmationPage with the order number
+      updateConfirmationPage("1220");
+  
+  // Navigate to confirmation page after order is placed
+    navigateTo('confirmation-page');
+      
+      // Optionally, reset the button state after success
+      payButton.textContent = originalText;
+      payButton.disabled = false;
 }
 
 
