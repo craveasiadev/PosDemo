@@ -483,7 +483,7 @@
             </div>
             <div class="confirmation-total">
               <span>Total</span>
-              <span id="confirmation-total-amount">$0.00</span>
+              <span id="confirmation-total-amount">RM70.00</span>
             </div>
           </div>
           
