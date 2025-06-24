@@ -45,10 +45,10 @@ function initCarousel() {
   updateCarousel();
   
   // Auto-rotate carousel
-  // setInterval(() => {
-  //   currentSlide = (currentSlide + 1) % slides.length;
-  //   updateCarousel();
-  // }, 5000);
+  setInterval(() => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    updateCarousel();
+  }, 5000);
   
   // Dot navigation
   dots.forEach((dot, index) => {
@@ -59,7 +59,7 @@ function initCarousel() {
   });
   
   function updateCarousel() {
-    carouselContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+    carouselContainer.style.transform = `translateX(-${currentSlide * 103}%)`;
     dots.forEach((dot, index) => {
       dot.classList.toggle('active', index === currentSlide);
     });
@@ -269,28 +269,28 @@ function openQuantityModal(item) {
   updateCartCount();
   
   // Show brief confirmation
-  const confirmation = document.createElement('div');
-  confirmation.className = 'add-confirmation';
-  confirmation.textContent = `${item.name} added to cart`;
-  confirmation.style.cssText = `
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: var(--success);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 4px;
-    z-index: 1000;
-    animation: fadeIn 0.3s, fadeOut 0.3s 1.7s;
-  `;
+  // const confirmation = document.createElement('div');
+  // confirmation.className = 'add-confirmation';
+  // confirmation.textContent = `${item.name} added to cart`;
+  // confirmation.style.cssText = `
+  //   position: fixed;
+  //   bottom: 20px;
+  //   left: 50%;
+  //   transform: translateX(-50%);
+  //   background-color: var(--success);
+  //   color: white;
+  //   padding: 10px 20px;
+  //   border-radius: 4px;
+  //   z-index: 1000;
+  //   animation: fadeIn 0.3s, fadeOut 0.3s 1.7s;
+  // `;
   
-  document.body.appendChild(confirmation);
+  // document.body.appendChild(confirmation);
   
-  // Remove after animation
-  setTimeout(() => {
-    document.body.removeChild(confirmation);
-  }, 2000);
+  // // Remove after animation
+  // setTimeout(() => {
+  //   document.body.removeChild(confirmation);
+  // }, 2000);
 }
 
 function updateCartCount() {

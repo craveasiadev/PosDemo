@@ -146,14 +146,21 @@
                   <img src="{{ asset('images/gym.jpg')}}" alt="Breakfast Menu" />
                 </div>
                 <div class="carousel-slide">
-                  <img src="{{ asset('images/splash3.jpg')}}" alt="Breakfast Menu" />
+                  <img src="{{ asset('images/GYM1.jpg')}}" alt="Breakfast Menu" />
+                </div>
+                 <div class="carousel-slide">
+                  <img src="{{ asset('images/GYM3.jpg')}}" alt="Breakfast Menu" />
+                </div>
+                <div class="carousel-slide">
+                  <img src="{{ asset('images/GYM2.jpg')}}" alt="Breakfast Menu" />
                 </div>
             </div>
-            {{-- <div class="carousel-dots" id="carouselDots">
+            <div class="carousel-dots" id="carouselDots">
                 <span class="dot active" data-slide="0"></span>
                 <span class="dot" data-slide="1"></span>
                 <span class="dot" data-slide="2"></span> 
-            </div> --}}
+                <span class="dot" data-slide="3"></span> 
+            </div>
         </div>
 
         <div class="head-order-overlay">
@@ -423,19 +430,16 @@
       <h2 class="section-title">E-Wallets</h2>
       <div class="ewallet-grid">
         <div class="ewallet-item touchngo" data-method="touchngo">
-          <img src="https://seeklogo.com/images/T/touch-n-go-logo-0BC4E8A4F8-seeklogo.com.png" alt="Touch 'n Go" class="ewallet-logo">
+          <img src="{{asset('images/tng.png')}}" alt="Touch 'n Go" class="ewallet-logo">
         </div>
         <div class="ewallet-item boost" data-method="boost">
-          <img src="https://seeklogo.com/images/B/boost-logo-5A4B8FC593-seeklogo.com.png" alt="Boost" class="ewallet-logo">
+          <img src="{{asset('images/boost.png')}}" alt="Boost" class="ewallet-logo">
         </div>
         <div class="ewallet-item grabpay" data-method="grabpay">
-          <img src="https://seeklogo.com/images/G/grabpay-logo-7020F74C53-seeklogo.com.png" alt="GrabPay" class="ewallet-logo">
+          <img src="{{asset('images/grabpay.png')}}" alt="GrabPay" class="ewallet-logo">
         </div>
         <div class="ewallet-item mae" data-method="mae">
-          <img src="https://seeklogo.com/images/M/mae-logo-47D3351FE6-seeklogo.com.png" alt="MAE" class="ewallet-logo">
-        </div>
-        <div class="ewallet-item shopeepay" data-method="shopeepay">
-          <img src="https://seeklogo.com/images/S/shopee-pay-logo-70A4D4AFBA-seeklogo.com.png" alt="ShopeePay" class="ewallet-logo">
+          <img src="{{asset('images/mae.png')}}" alt="MAE" class="ewallet-logo">
         </div>
       </div>
       <button class="pay-button" data-method="mobile-payment">Select</button>
