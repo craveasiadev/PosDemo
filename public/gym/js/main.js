@@ -92,7 +92,8 @@ function initEventListeners() {
   });
   document.getElementById('back-to-cart').addEventListener('click', () => navigateTo('cart-page'));
   document.getElementById('back-to-upsell').addEventListener('click', () => navigateTo('cart-page'));
-  document.getElementById('process-payment').addEventListener('click', processPayment);
+  document.getElementById('process-payment-one').addEventListener('click', processPayment);
+  document.getElementById('process-payment-two').addEventListener('click', processPayment);
   document.getElementById('new-order').addEventListener('click', startNewOrder);
   
   // Category navigation
@@ -471,7 +472,7 @@ function processPayment() {
     };
   
     // Show loading state
-    const payButton = document.getElementById('process-payment');
+    const payButton = document.getElementById('process-payment-one');
     const originalText = payButton.textContent;
     payButton.textContent = 'Processing...';
     payButton.disabled = true;

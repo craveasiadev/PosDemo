@@ -418,7 +418,7 @@
           <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa" class="card-logo">
           <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" class="card-logo">
         </div>
-        <button class="pay-button" data-method="credit-card">Select</button>
+        <button id="process-payment-two" class="pay-button" data-method="credit-card">Select</button>
       </div>
     </div>
     
@@ -428,8 +428,9 @@
     <!-- E-Wallets Section -->
     <div class="ewallet-section">
       <h2 class="section-title">E-Wallets</h2>
-      <div class="ewallet-grid">
-        <div class="ewallet-item touchngo" data-method="touchngo">
+      <div class="card-payment-area">
+        <div class="card-logos">
+          <div class="ewallet-item touchngo" data-method="touchngo">
           <img src="{{asset('images/tng.png')}}" alt="Touch 'n Go" class="ewallet-logo">
         </div>
         <div class="ewallet-item boost" data-method="boost">
@@ -441,12 +442,15 @@
         <div class="ewallet-item mae" data-method="mae">
           <img src="{{asset('images/mae.png')}}" alt="MAE" class="ewallet-logo">
         </div>
+        </div>
+        <button id="process-payment-one" class="pay-button" data-method="mobile-payment">Select</button>
       </div>
-      <button class="pay-button" data-method="mobile-payment">Select</button>
+      
+      
     </div>
     
     <!-- Pay Now Button (Your original button) -->
-    <button id="process-payment" class="primary-btn">Pay Now</button>
+    {{-- <button id="process-payment" class="primary-btn">Pay Now</button> --}}
     
     <!-- Back Button -->
     <button class="back-button">Back</button>
