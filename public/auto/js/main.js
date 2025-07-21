@@ -59,7 +59,7 @@ function initCarousel() {
   });
   
   function updateCarousel() {
-    carouselContainer.style.transform = `translateX(-${currentSlide * 120}%)`;
+    carouselContainer.style.transform = `translateX(-${currentSlide * 130}%)`;
     dots.forEach((dot, index) => {
       dot.classList.toggle('active', index === currentSlide);
     });
