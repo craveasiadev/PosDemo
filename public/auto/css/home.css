@@ -9,20 +9,22 @@
 
 /* Ad Carousel - Full Screen */
 .ad-carousel {
-    position: absolute; /* Take over the whole home-page area */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden; /* Hide overflowing slides */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
 
+
 .carousel-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    transition: transform 0.8s ease-in-out; /* Smooth transition for slides */
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s ease-in-out;
 }
+
 
 .carousel-slide {
     min-width: 100%; /* Each slide takes full width */
@@ -31,14 +33,14 @@
     position: relative; /* For content positioning inside slide if any */
 }
 
-.carousel-slide video,
-.carousel-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    /* Using calc() for object-position: */
-
+.carousel-slide img,
+.carousel-slide video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
+
 /* Carousel Dots (overlayed on carousel) */
 .carousel-dots {
     position: absolute;

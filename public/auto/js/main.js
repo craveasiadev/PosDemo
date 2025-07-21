@@ -39,7 +39,7 @@ function initCarousel() {
   const carouselContainer = document.querySelector('.carousel-container');
   const slides = document.querySelectorAll('.carousel-slide');
   const dots = document.querySelectorAll('.dot');
-  let currentSlide = 0;
+  let currentSlide = 1;
   
   // Set initial position
   updateCarousel();
