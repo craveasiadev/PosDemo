@@ -1,0 +1,118 @@
+/* Confirmation Page Styles */
+.confirmation-container {
+    padding: var(--spacing-lg);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .confirmation-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    animation: slideUp var(--transition-medium);
+  }
+  
+  .checkmark {
+    margin-bottom: var(--spacing-lg);
+    animation: slideUp var(--transition-medium) 0.2s forwards, pulse 2s 1s infinite;
+  }
+  
+  .confirmation-header h1 {
+    font-size: 28px;
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .confirmation-header p {
+    color: var(--gray);
+  }
+  
+  .qr-receipt {
+    background-color: var(--white);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: var(--spacing-xl);
+    box-shadow: var(--shadow-sm);
+    animation: fadeIn var(--transition-medium) 0.4s forwards;
+  }
+  
+  .receipt-qr-code {
+    margin: var(--spacing-md) 0;
+  }
+  
+  .qr-receipt p {
+    font-weight: 500;
+  }
+  
+  #order-number {
+    font-weight: 600;
+    color: var(--secondary);
+  }
+  
+  .order-details {
+    background-color: var(--lightest-gray);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+    animation: fadeIn var(--transition-medium) 0.6s forwards;
+    overflow-y: auto;
+    max-height: 300px;
+  }
+  
+  .confirmation-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--light-gray);
+  }
+  
+  .confirmation-item:last-child {
+    border-bottom: none;
+  }
+  
+  .confirmation-item-name {
+    font-weight: 500;
+  }
+  
+  .confirmation-total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    font-size: 18px;
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-md);
+    border-top: 2px solid var(--light-gray);
+  }
+  
+  .confirmation-actions {
+    margin-top: auto;
+    animation: fadeIn var(--transition-medium) 0.8s forwards;
+  }
+  
+  #new-order {
+    width: 100%;
+    font-size: 18px;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 480px) {
+    .confirmation-container {
+      padding: var(--spacing-md);
+    }
+    
+    .confirmation-header h1 {
+      font-size: 24px;
+    }
+    
+    .qr-receipt, .order-details {
+      padding: var(--spacing-md);
+    }
+  }

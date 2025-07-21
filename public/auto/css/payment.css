@@ -1,0 +1,293 @@
+/* Payment Page Styles - Updated to match uploaded design */
+.payment-container {
+  padding: 40px 20px;
+  min-height: calc(100% - 64px);
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f9fa;
+  max-width: 80% !important;
+  margin: 0 auto;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Logo Section */
+.payment-logo {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 40px auto;
+  background: linear-gradient(135deg, #2c3e7a, #4a5d9a);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(44, 62, 122, 0.3);
+}
+
+/* Main Title */
+.payment-title {
+  font-size: 32px;
+  font-weight: 400;
+  color: #333;
+  text-align: center;
+  margin: 0 0 60px 0;
+  line-height: 1.2;
+}
+
+/* Card Section */
+.card-section {
+  margin-bottom: 40px;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: 400;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: #ffc107;
+}
+
+/* Card Payment Area */
+.card-payment-area {
+  background-color: white;
+  border-radius: 16px;
+  padding: 40px 20px;
+  text-align: center;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  width: 100% !important;
+}
+
+.card-logos {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.card-logo {
+  height: 50px;
+  width: auto;
+}
+
+.pay-button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 20px 44px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pay-button:hover {
+  background-color: #555;
+  transform: translateY(-1px);
+}
+
+/* Divider */
+.payment-divider {
+  text-align: center;
+  margin: 50px 0;
+  font-size: 20px;
+  color: #666;
+  font-weight: 400;
+}
+
+/* E-Wallets Section */
+.ewallet-section {
+  margin-bottom: 40px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.ewallet-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 30px;
+  justify-items: center;
+  
+}
+
+.ewallet-item {
+  width: 80px;
+  height: 80px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.ewallet-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Individual E-wallet Colors */
+/* .touchngo {
+  background-color: #0066cc;
+}
+
+.boost {
+  background-color: #ff4444;
+}
+
+.grabpay {
+  background-color: #00aa44;
+}
+
+.mae {
+  background-color: #ffcc00;
+} */
+
+.shopeepay {
+  background-color: #ff5722;
+}
+
+/* .ewallet-logo {
+  height: 40px;
+  width: auto;
+  max-width: 60px;
+  filter: brightness(0) invert(1); 
+} */
+
+/* Your original Pay Now button styling */
+#process-payment {
+  width: 100%;
+  font-size: 18px;
+  margin: 20px 0;
+  padding: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#process-payment:hover {
+  background-color: #0056b3;
+}
+
+/* Back Button */
+.back-button {
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 18px;
+  cursor: pointer;
+  text-align: center;
+  padding: 20px;
+  margin-top: auto;
+  transition: color 0.3s ease;
+}
+
+.back-button:hover {
+  color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .payment-container {
+    padding: 20px 15px;
+  }
+  
+  .payment-logo {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .payment-title {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+  
+  .card-logos {
+    gap: 20px;
+  }
+  
+  .card-logo {
+    height: 40px;
+  }
+  
+  .ewallet-grid {
+    gap: 12px;
+  }
+  
+  .ewallet-item {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .ewallet-logo {
+    height: 35px;
+  }
+}
+
+@media (min-width: 768px) {
+  .payment-container {
+    max-width: 450px;
+    padding: 50px 30px;
+  }
+}
+
+/* Legacy styles for backward compatibility */
+.payment-summary {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 16px;
+  margin-bottom: 20px;
+  display: none; /* Hidden by default in new design */
+}
+
+.payment-methods {
+  margin-bottom: 20px;
+}
+
+.payment-form {
+  margin-bottom: 20px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.payment-form-content {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.payment-form-content.active {
+  display: block;
+}
+
+.qr-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.payment-qr-code {
+  margin: 20px 0;
+}
