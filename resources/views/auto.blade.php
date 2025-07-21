@@ -143,10 +143,10 @@
                    <video id="background-video" src="{{ asset('images/qbot-mcd.mp4') }}" autoplay muted loop playsinline></video>
                 </div> --}}
                 <div class="carousel-slide">
-                  <img src="{{ asset('images/autobanner.jpg')}}" alt="Breakfast Menu" />
+                  <img src="{{ asset('images/autobanner2.png')}}" alt="Breakfast Menu" />
                 </div>
                 <div class="carousel-slide">
-                  <img src="{{ asset('images/autobanner1.png')}}" alt="Breakfast Menu" />
+                  <img src="{{ asset('images/autobanner4.jpg')}}" alt="Breakfast Menu" />
                 </div>
             </div>
             <div class="carousel-dots" id="carouselDots">
